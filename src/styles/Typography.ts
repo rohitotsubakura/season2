@@ -1,15 +1,81 @@
+import { css } from "@emotion/core";
+
+const Display2 = css`
+    font-size: 3rem;
+    line-height: 3.8rem;
+    font-weight: 900;
+    @media (max-width: 768px) {
+        font-size: 2.8rem;
+        line-height: 1.6rem; 
+    }
+`;
+
+const Display1 = css`
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+    font-weight: 900;
+    @media (max-width: 768px) {
+        font-size: 2.6rem;
+        line-height: 3rem; 
+    }
+`;
+
+const Heading = css`
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    @media (max-width: 768px) {
+        font-size: 1.4rem;
+        line-height: 1.6rem; 
+    }
+`;
+
+const Bold = css`
+    font-size: 1rem;
+    line-height: 1.6rem;
+    font-weight: 700;
+    @media (max-width: 768px) {
+        font-size: 1rem;
+        line-height: 1.6rem; 
+    }
+`;
+
+const Body = css`
+    font-size: 1rem;
+    line-height: 1.6rem;
+    font-weight: 400;
+    @media (max-width: 768px) {
+        font-size: 1rem;
+        line-height: 1.6rem; 
+    }
+`;
+
+const Button = css`
+    font-size: 1rem;
+    line-height: 1.6rem;
+    font-weight: 700;
+    @media (max-width: 768px) {
+        font-size: 1rem;
+        line-height: 1.6rem; 
+    }
+`;
+
+const Caption = css`
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    font-weight: 400;
+    @media (max-width: 768px) {
+        font-size: 0.8rem;
+        line-height: 1.2rem; 
+    }
+`;
+
 export default {
-    White: 'rgba(255, 255, 255, 1)',
-    Black: 'rgba(64, 55, 55, 1)',
-    BoundaryBlack: 'rgba(64, 55, 55, 0.16)',
-    BoundaryWhite: 'rgba(255, 255, 255, 0.16)',
-    Gray: 'rgba(160, 150, 150, 1)',
-    WhiteGray: 'rgba(249, 249, 249, 1)',
-    Primary: 'rgba(198, 82, 82, 1)',
-    Secondary: 'rgba(242, 229, 208, 1)',
-    BackToTop: '#d02c2c',
-    SnsTwitter: '#1da1f2',
-    SNSYouTube: '#ff0000',
-    SNSGitHub: '#333333',
-    SNSNote: '#6fcfbe'
+    Display2: Display2,
+    Display1: Display1,
+    Heading: Heading,
+    Bold: Bold,
+    Body: Body,
+    Button: Button,
+    Caption: Caption
 }
