@@ -1,4 +1,4 @@
-import { Global, css, jsx } from '@emotion/core'
+import { Global, css } from '@emotion/core'
 
 const resetStyle = css`
 /*!
@@ -18,4 +18,4 @@ a {
 }
 `;
 
-export default () => <Global styles={[resetStyle, baseStyle]}
+export default () => <Global styles={[resetStyle, baseStyle]} />;
