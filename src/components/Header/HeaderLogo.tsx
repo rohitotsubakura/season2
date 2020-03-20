@@ -9,7 +9,7 @@ import Size from "../../styles/Size";
 
 const root = css`
     display: inline-block;
-    width: ${Size(20)};
+    width: ${Size(15)};
     & > img {
         max-width: 100%;
         -webkit-filter: drop-shadow(${Size(5)} ${Size(5)} ${Size(5)} ${Color.BoundaryBlack});

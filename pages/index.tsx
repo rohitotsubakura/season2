@@ -10,7 +10,12 @@ import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 
 const root = css`
-    background-color: ${Color.White};
+    background-color: ${Color.Primary};
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 1000px;
 `;
 
 const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (

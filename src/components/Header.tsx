@@ -3,13 +3,20 @@ import React from "react";
 import Link from "next/link";
 
 import { css, jsx } from "@emotion/core";
-import Color from "../styles/Color";
 import Size from "../styles/Size";
-import Typography from "../styles/Typography";
 import HeaderLogo from "./Header/HeaderLogo";
+import HeaderMenu from "./Header/HeaderMenu";
 
 const root = css`
-    fill: ${Color.BackToTop};
+    display: flex;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: ${Size(200)};
+    padding: ${Size(5)} 0;
 `;
 
 type HeaderProps = {
@@ -17,10 +24,11 @@ type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = () => {
     return (
-        <>
+        <div css={root}>
             <HeaderLogo to={'/'}/>
             <p>これはヘッダーです</p>
-        </>
+            <HeaderMenu />
+        </div>
     )
 }
 
