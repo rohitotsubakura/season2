@@ -1,5 +1,6 @@
-import { NextPage } from 'next';
+import { NextPage, NextPageContext } from 'next';
 import Button from "../src/components/Button";
+import Footer from "../src/components/Footer";
 
 const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
     <>
@@ -9,10 +10,11 @@ const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
         >
             覗きに行く
         </Button>
+        <Footer year={2020} copyright={"Rohito Tsubakura"}></Footer>
     </>
 );
 
-Home.getInitialProps = async ({ req }) => {
+Home.getInitialProps = async ({req}: NextPageContext) => {
     const userAgent = req ? req.headers['user-agent'] || '' : navigator.userAgent;
     return { userAgent };
 };
