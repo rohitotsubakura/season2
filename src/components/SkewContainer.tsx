@@ -12,19 +12,21 @@ const root = css`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 150%;
-    padding: ${Size(20)} 0;
-    -webkit-transform: rotate(-5deg) translate3d(0, 0, 0);
-    tranform: rotate(-5deg) translate3d(0, 0, 0);
-    & > div {
-        -webkit-transform: rotate(5deg) translate3d(0, 0, 0);
-        tranform: rotate(5deg) translate3d(0, 0, 0);
-    }
-    &:before {
-        content: '';
+    z-index: 0;
+    width: 100%;
+    padding: ${Size(20)} 0 ${Size(30)} 0;
+    &:after {
+        content: "";
         position: absolute;
-        background: inherit;
-        filter: blur(20px) brightness(0.5);
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        -webkit-transform: skewY(-5deg);
+        transform: skewY(-5deg);
+        transform-origin: bottom left;
+        z-index: -1;
     }
 `;
 

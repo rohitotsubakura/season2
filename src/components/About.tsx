@@ -11,17 +11,15 @@ import Button from "../components/Button";
 import SkewContainer from "./SkewContainer";
 
 const root = css`
-    position: absolute;
-    top: 80vh; 
-    padding-top: ${Size(50)};
-    background-image: url("/static/images/lxi_makibira_bg.png");
-    background-size: cover;
-    background-position: center;
-    &::before {
-        content: '';
+    position: relative;
+    &:after {
+        content: "";
         position: absolute;
-        background: inherit;
-        filter: blur(20px) brightness(0.5);
+        background-image: url("/static/images/lxi_makibira_bg.png");
+        background-size: cover/50%;
+        background-position: center;
+        filter: brightness(0.5);
+        z-index: -1;
     }
 `;
 

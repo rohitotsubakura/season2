@@ -11,6 +11,7 @@ import Footer from "../src/components/Footer";
 import NewsArticle from '../src/components/NewsArticle';
 import MainVisual from '../src/components/MainVisual';
 import About from '../src/components/About';
+import News from '../src/components/News';
 
 const root = css`
     background-color: ${Color.Primary};
@@ -27,8 +28,8 @@ const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
         <div css={root}>
             <Header />
             <MainVisual />
+            <News />
             <About />
-            <NewsArticle />
             <Button
                 to='https://github.com/rohitotsubakura/season2'
             >
