@@ -1,0 +1,131 @@
+[
+    {
+        "ja" : {
+            "common" : {
+                "header": {
+                    "list" : [
+                        {
+                            "name": "What's new?",
+                            "to": "/#news"
+                        },
+                        {
+                            "name": "ABOUT",
+                            "to": "/#about"
+                        },
+                        {
+                            "name": "PROFILE",
+                            "to": "/#profile"
+                        },
+                        {
+                            "name": "VIDEOS",
+                            "to": "/#videos"
+                        },
+                        {
+                            "name": "GOODS",
+                            "to": "/#goods"
+                        },
+                        {
+                            "name": "TERMS OF USE",
+                            "to": "/#terms"
+                        },
+                        {
+                            "name": "LINKS",
+                            "to": "/#links"
+                        }
+                    ]
+                },
+                "breadcrumb" : {
+                    "separator": ">",
+                    "links" : [
+                        {
+                            "name": "TOP",
+                            "to": "/"
+                        },
+                        {
+                            "name": "What's new?",
+                            "to": "/news"
+                        }
+                    ]
+                },
+                "news": {
+                    "heading": "What's New?",
+                    "subheading": "お知らせ",
+                    "tagTitle": "タグで絞り込み",
+                    "tags": [
+                        "お知らせ",
+                        "動画",
+                        "配信予定",
+                        "記事",
+                        "今日の一枚"
+                    ]
+                }
+            },
+            "top" : {
+                "news": {
+                    "heading": "What's New?",
+                    "subheading": "お知らせ",
+                    "link": "もっと見る"
+                },
+                "about": {
+                    "heading": "ABOUT",
+                    "subheading": "アングラ美男子の日常覗き放題！",
+                    "body": "ある時は残酷劇の登場人物、ある時はヴィジュアル系バンドの演者。アンダーグラウンドな舞台に立ってそうな白塗りの美男子が、何故か平穏な生活を送っている。そんなギャップのある世界観を表現するためにツバクラロヒトは造られました。テクノロジーを拠り所とし、今日も制作、時々サービス(自宅コスプレ)！クリエイター気質な彼の日常を、ビデオレター形式でお届けします。",
+                    "link": "覗きに行く"
+                },
+                "profile": {
+                    "heading": "PROFILE",
+                    "subheading": "プロフィール",
+                    "body": "アングラでレトロ風な外見の自律型バーチャルビーイング。<br>2019年に趣味開拓のために造られ、「何か作ること」を何よりの生きがいにしている。<br>現在はWebサイト制作をメインとして、イラストや音楽など、PCでできる様々なものづくりに没頭中！",
+                    "link": "声を聞く"
+                },
+                "videos": {
+                    "heading": "VIDEOS",
+                    "subheading": "動画の一部です。",
+                    "link": "もっと見る"
+                },
+                "goods": {
+                    "heading": "GOODS",
+                    "subheading": "グッズ販売(BOOTH商品ページに飛びます)",
+                    "body": "comming soon..."
+                },
+                "terms": {
+                    "heading": "TERMS OF USE",
+                    "subheading": "キャラクター利用の際は、規約を守ってご利用下さい。",
+                    "body": {
+                        "approved" : {
+                            "heading": "やっていいこと",
+                            "list": [
+                                "公式画像の個人利用(端末の壁紙として設定するなど)",
+                                "ファンアート、二次創作物の制作、頒布",
+                                "動画のキャプチャ画像の引用、切り抜き動画・MADの作成"
+                            ]
+                        },
+                        "prohibited" : {
+                            "heading": "やってはいけないこと",
+                            "list": [
+                                "政治、宗教に関わる情報発信へのキャラクターの使用",
+                                "他人を誹謗中傷する目的でのキャラクターの使用",
+                                "著しく暴力的な表現、反社会的な内容、又は適切なゾーニングのないキャラクターの使用"
+                            ]
+                        }
+                    }
+                }
+            },
+            "404" : {
+                "heading": "404",
+                "subheading": "Not Found.",
+                "body": "お探しのページは見つかりませんでした。",
+                "links" : [
+                    {
+                        "name": "TOPへ戻る",
+                        "to": "/"
+                    },
+                    {
+                        "name": "BACK",
+                        "to": ""
+                    }
+                ]
+            }
+        }
+    }
+]
