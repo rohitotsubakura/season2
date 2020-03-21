@@ -9,6 +9,7 @@ import Button from "../src/components/Button";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import NewsArticle from '../src/components/NewsArticle';
+import MainVisual from '../src/components/MainVisual';
 
 const root = css`
     background-color: ${Color.Primary};
@@ -16,7 +17,6 @@ const root = css`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 1000px;
 `;
 
 const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
@@ -24,7 +24,7 @@ const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
         <Global />
         <div css={root}>
             <Header />
-            <h1>Hello Next! - user agent: {userAgent}</h1>
+            <MainVisual />
             <NewsArticle />
             <Button
                 to='https://github.com/rohitotsubakura/season2'
