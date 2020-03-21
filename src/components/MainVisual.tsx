@@ -18,6 +18,7 @@ const root = css`
     background-image: url("/static/images/imagekeyvisual.png");
     background-size: cover;
     background-position: center;
+    z-index: 1;
     & > img {
         width: ${Size(90)};
         margin-bottom: ${Size(2.5)};
