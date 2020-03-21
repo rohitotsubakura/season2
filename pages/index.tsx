@@ -10,6 +10,7 @@ import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import NewsArticle from '../src/components/NewsArticle';
 import MainVisual from '../src/components/MainVisual';
+import About from '../src/components/About';
 
 const root = css`
     background-color: ${Color.Primary};
@@ -17,6 +18,7 @@ const root = css`
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 `;
 
 const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
@@ -25,6 +27,7 @@ const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
         <div css={root}>
             <Header />
             <MainVisual />
+            <About />
             <NewsArticle />
             <Button
                 to='https://github.com/rohitotsubakura/season2'
