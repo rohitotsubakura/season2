@@ -12,6 +12,7 @@ import NewsArticle from '../src/components/NewsArticle';
 import MainVisual from '../src/components/MainVisual';
 import About from '../src/components/About';
 import News from '../src/components/News';
+import Profile from '../src/components/Profile';
 
 const root = css`
     background-color: ${Color.Primary};
@@ -30,6 +31,7 @@ const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
             <MainVisual />
             <News />
             <About />
+            <Profile />
             <Button
                 to='https://github.com/rohitotsubakura/season2'
             >
