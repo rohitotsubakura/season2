@@ -14,6 +14,8 @@ import News from '../src/components/News';
 import Profile from '../src/components/Profile';
 import PageHead from "../src/components/Head";
 
+import TextJson from "../src/data/ja.json";
+
 const root = css`
     background-color: ${Color.Primary};
     position: relative;
@@ -23,10 +25,24 @@ const root = css`
     width: 100%;
 `;
 
+const IndexText = TextJson[0].ja.common.ogp;
+
+const IndexHeadProps = {
+    title: IndexText.title.top,
+    url: IndexText.url.top,
+    ogpthumb: IndexText.ogpthumb.top,
+    description: IndexText.description.top
+};
+
 const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
     <>
         <Global />
-        <PageHead title={"TOP"}/>
+        <PageHead
+            title={IndexHeadProps.title}
+            url={IndexHeadProps.url}
+            ogpthumb={IndexHeadProps.ogpthumb}
+            description={IndexHeadProps.description}
+        />
         <div css={root}>
             <Header />
             <MainVisual />

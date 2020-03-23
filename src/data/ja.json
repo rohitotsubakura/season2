@@ -2,6 +2,30 @@
     {
         "ja" : {
             "common" : {
+                "ogp": {
+                    "title": {
+                        "top": "TOP",
+                        "newsList": "お知らせ一覧",
+                        "newsDetail": "お知らせ",
+                        "404": "404"
+                    },
+                    "url": {
+                        "top": "http://rohitotsubakura.netlify.com/",
+                        "newsList": "http://rohitotsubakura.netlify.com/news/",
+                        "newsDetail": "http://rohitotsubakura.netlify.com/news/",
+                        "404": "http://rohitotsubakura.netlify.com/404/"
+                    },
+                    "ogpthumb": {
+                        "top": "/static/images/imagekeyvisual.png",
+                        "newsList": "",
+                        "newsDetail": "",
+                        "404": "static/images/image404.png"
+                    },
+                    "description": {
+                        "top": "クリエイター系白塗り美男子VTuber、ツバクラロヒトの公式サイトです。",
+                        "newsList": "VTuber「ツバクラロヒト」に関わるニュースの一覧です。"
+                    }
+                },
                 "header": {
                     "list" : [
                         {
@@ -109,6 +133,12 @@
                             ]
                         }
                     }
+                },
+                "links": {
+                    "twitter": "https://twitter.com/RhtTbkr",
+                    "youtube": "https://www.youtube.com/channel/UCpctdX7YT14M9jza4ExLUJw",
+                    "github": "https://github.com/rohitotsubakura",
+                    "note": "https://note.com/frontendpict"
                 }
             },
             "404" : {
