@@ -16,13 +16,13 @@
                         "404": "http://rohitotsubakura.netlify.com/404/"
                     },
                     "ogpthumb": {
-                        "top": "/static/images/imagekeyvisual.png",
+                        "top": "https://user-images.githubusercontent.com/7070710/77123061-7a65b500-6a82-11ea-8d27-f2d993af9744.png",
                         "newsList": "",
                         "newsDetail": "",
-                        "404": "static/images/image404.png"
+                        "404": "/static/images/image404.png"
                     },
                     "description": {
-                        "top": "クリエイター系白塗り美男子VTuber、ツバクラロヒトの公式サイトです。",
+                        "top": "クリエイターでWebフロントエンド系な白塗り美男子VTuber、ツバクラロヒトの公式サイトです。",
                         "newsList": "VTuber「ツバクラロヒト」に関わるニュースの一覧です。"
                     }
                 },
