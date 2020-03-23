@@ -14,7 +14,7 @@ const root = css`
     align-items: center;
     z-index: 0;
     width: 100%;
-    padding: ${Size(20)} 0 ${Size(30)} 0;
+    padding: ${Size(15)} 0 ${Size(40)} 0;
     &:after {
         content: "";
         position: absolute;
