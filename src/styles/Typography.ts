@@ -34,9 +34,9 @@ const Display1 = css`
 
 const Heading = css`
     ${fontFamily.serif}
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 700;
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+    font-weight: 900;
     @media (max-width: 768px) {
         font-size: 1.4rem;
         line-height: 1.6rem; 
