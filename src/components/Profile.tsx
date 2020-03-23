@@ -11,7 +11,6 @@ import Button from "../components/Button";
 import SkewContainer from "./SkewContainer";
 
 const root = css`
-
     position: relative;
     &:after {
         content: "";
@@ -54,8 +53,9 @@ const descStyle = css`
         width: 46%;
         margin-right: 2%;
     }
-    &:last-child {
+    & > div:last-child {
         display: flex;
+        flex-direction: column;
         justify-content: flex-end;
         align-items: flex-end;
     }

@@ -24,11 +24,11 @@ type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = () => {
     return (
-        <div css={root}>
+        <nav css={root}>
             <HeaderLogo to={'/'}/>
             <p>これはヘッダーです</p>
             <HeaderMenu />
-        </div>
+        </nav>
     )
 }
 

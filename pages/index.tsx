@@ -8,11 +8,11 @@ import Color from '../src/styles/Color';
 import Button from "../src/components/Button";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
-import NewsArticle from '../src/components/NewsArticle';
 import MainVisual from '../src/components/MainVisual';
 import About from '../src/components/About';
 import News from '../src/components/News';
 import Profile from '../src/components/Profile';
+import PageHead from "../src/components/Head";
 
 const root = css`
     background-color: ${Color.Primary};
@@ -26,6 +26,7 @@ const root = css`
 const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
     <>
         <Global />
+        <PageHead title={"TOP"}/>
         <div css={root}>
             <Header />
             <MainVisual />

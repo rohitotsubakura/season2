@@ -31,12 +31,12 @@ const innerStyle = css`
     & > h2 {
         color: ${Color.White};
         ${Typography.Display1};
-        margin-bottom: ${Size(10)};
+        margin-bottom: ${Size(2.5)};
     }
     & > h3 {
         color: ${Color.White};
         ${Typography.Heading};
-        margin-bottom: ${Size(10)};
+        margin-bottom: ${Size(3)};
     }
     & > p {
         color: ${Color.White};
