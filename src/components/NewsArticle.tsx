@@ -57,7 +57,6 @@ const NewsArticle: React.FC<NewsArticleProps> = () => {
                     <NewsArticleThumbnail/>
                     <NewsArticleText>
                         <NewsArticleTitle title={"Webサイト制作講座 #4 公開"} />
-                        <p>これは新着情報です</p>
                         <div css={secondroot}>
                             <NewsArticleDate date={"2020.03.30"} />
                             <NewsArticleTags tags={tagList} />

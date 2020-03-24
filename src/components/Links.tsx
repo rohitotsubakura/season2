@@ -57,7 +57,6 @@ const linksStyle = css`
 const linksText = TextJson[0].ja.top.links;
 
 const Links: React.FC = () => {
-    console.log(linksText.items);
     return (
         <SkewContainer backLink={"links"} overrideStyle={root}>
             <div css={innerStyle}>

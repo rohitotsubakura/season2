@@ -26,7 +26,6 @@ const Header: React.FC<HeaderProps> = () => {
     return (
         <nav css={root}>
             <HeaderLogo to={'/'}/>
-            <p>これはヘッダーです</p>
             <HeaderMenu />
         </nav>
     )
