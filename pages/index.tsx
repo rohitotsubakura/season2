@@ -22,6 +22,7 @@ import Goods from '../src/components/Goods';
 import TextJson from "../src/data/ja.json";
 import Terms from '../src/components/Terms';
 import Links from '../src/components/Links';
+import TopLink from '../src/components/TopLink';
 
 library.add(faYoutube, faTwitter, faGithubAlt,faStickyNote, faHeadphones, faEye);
 
@@ -54,6 +55,7 @@ const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
         />
         <div css={root}>
             <Header />
+            <TopLink />
             <MainVisual />
             <News />
             <About />
