@@ -17,6 +17,7 @@ import Videos from '../src/components/Videos';
 import Goods from '../src/components/Goods';
 
 import TextJson from "../src/data/ja.json";
+import Terms from '../src/components/Terms';
 
 const root = css`
     background-color: ${Color.Primary};
@@ -53,6 +54,7 @@ const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
             <Profile />
             <Videos />
             <Goods />
+            <Terms />
             <Button
                 to='https://github.com/rohitotsubakura/season2'
             >
