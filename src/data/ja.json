@@ -137,6 +137,8 @@
                     }
                 },
                 "links": {
+                    "heading": "LINKS",
+                    "subheading": "使っているSNS、連絡先",
                     "twitter": "https://twitter.com/RhtTbkr",
                     "youtube": "https://www.youtube.com/channel/UCpctdX7YT14M9jza4ExLUJw",
                     "github": "https://github.com/rohitotsubakura",
