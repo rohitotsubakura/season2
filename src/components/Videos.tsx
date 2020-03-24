@@ -1,5 +1,6 @@
 /**@jsx jsx */
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { css, jsx } from "@emotion/core";
 import Size from "../styles/Size";
@@ -48,8 +49,8 @@ const Videos: React.FC<VideosProps> = () => {
             <div css={innerStyle}>
                 <h2>{videosText.heading}</h2>
                 <p>{videosText.subheading}</p> 
-                <Button to={TextJson[0].ja.top.links.youtube}>
-                    <i className="far fa-eye"></i>もっと見る
+                <Button to={TextJson[0].ja.top.videos.to}>
+                    <FontAwesomeIcon icon="eye"/>もっと見る
                 </Button>
             </div>
         </SkewContainer>

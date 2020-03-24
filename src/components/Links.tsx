@@ -8,6 +8,8 @@ import Typography from "../styles/Typography";
 
 import TextJson  from "../data/ja.json";
 import SkewContainer from "./SkewContainer";
+import SnsButton from "./SnsButton";
+
 
 const root = css`
     position: relative;
@@ -36,15 +38,46 @@ const innerStyle = css`
     }
 `;
 
+const linksStyle = css`
+    display: flex;
+    flex-direction: row;
+    width: ${Size(150)};
+    justify-content: space-around;
+    align-items: center;
+    @media (max-width: 768px) {
+        width: 100%;
+        flex-direction: column;
+        & > * {
+            magin-bottom: ${Size(10)};
+        }
+    }
+`;
+
 
 const linksText = TextJson[0].ja.top.links;
 
 const Links: React.FC = () => {
+    console.log(linksText.items);
     return (
         <SkewContainer backLink={"links"} overrideStyle={root}>
             <div css={innerStyle}>
                 <h2>{linksText.heading}</h2>
-                <p>{linksText.subheading}</p> 
+                <p>{linksText.subheading}</p>
+                <div css={linksStyle}>
+                    {
+                        linksText.items.map((item, index) => 
+                            <React.Fragment key={index}>
+                                <SnsButton
+                                    to={item.url}
+                                    brandColor={item.brandColor}
+                                    name={item.name}
+                                    faIconPrefix={item.faIconPrefix}
+                                    faIconName={item.faIconName}
+                                />
+                            </React.Fragment>
+                        )
+                    }
+                </div>
             </div>
         </SkewContainer>
     )

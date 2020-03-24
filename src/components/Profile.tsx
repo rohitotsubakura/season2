@@ -1,5 +1,6 @@
 /**@jsx jsx */
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { css, jsx } from "@emotion/core";
 import Size from "../styles/Size";
@@ -94,7 +95,7 @@ const Profile: React.FC<ProfileProps> = () => {
                     </div>
                     <div>
                         <Button to={""}>
-                            <i className="fas fa-headphones-alt"></i>声を聞く
+                            <FontAwesomeIcon icon="headphones"/><i className="fas fa-headphones-alt"></i>声を聞く
                         </Button>
                     </div>
                 </div>

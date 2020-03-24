@@ -1,5 +1,6 @@
 /**@jsx jsx */
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { css, jsx } from "@emotion/core";
 import Size from "../styles/Size";
@@ -61,7 +62,7 @@ const News: React.FC<NewsProps> = () => {
                     <NewsArticle />
                 </div>
                 <Button to={"/news"}>
-                    <i className="far fa-eye"></i>もっと見る
+                    <FontAwesomeIcon icon="eye"/>もっと見る
                 </Button>
             </div>
         </SkewContainer>

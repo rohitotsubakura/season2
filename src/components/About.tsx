@@ -1,5 +1,6 @@
 /**@jsx jsx */
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { css, jsx } from "@emotion/core";
 import Size from "../styles/Size";
@@ -58,7 +59,7 @@ const About: React.FC<AboutProps> = () => {
                 <h3>{aboutText.subheading}</h3> 
                 <p>{aboutText.body}</p>
                 <Button to={""}>
-                    <i className="far fa-eye"></i>覗きに行く
+                    <FontAwesomeIcon icon="eye"/>覗きに行く
                 </Button>
             </div>
         </SkewContainer>

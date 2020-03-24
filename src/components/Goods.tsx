@@ -1,5 +1,6 @@
 /**@jsx jsx */
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { css, jsx } from "@emotion/core";
 import Size from "../styles/Size";
@@ -50,7 +51,7 @@ const Goods: React.FC<GoodsProps> = () => {
                 <p>{goodsText.subheading}</p> 
                 <p>{goodsText.body}</p>
                 <Button to={goodsText.to}>
-                    <i className="far fa-eye"></i>{goodsText.link}
+                    <FontAwesomeIcon icon="eye"/>{goodsText.link}
                 </Button>
             </div>
         </SkewContainer>

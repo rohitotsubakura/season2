@@ -1,6 +1,9 @@
 /**@jsx jsx */
 
 import { NextPage, NextPageContext } from 'next';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faStickyNote, faHeadphones, faEye } from '@fortawesome/free-solid-svg-icons';
+import { faYoutube, faTwitter, faGithubAlt } from '@fortawesome/free-brands-svg-icons';
 
 import { css, jsx } from "@emotion/core";
 import Global from "../src/styles/Global";
@@ -19,6 +22,8 @@ import Goods from '../src/components/Goods';
 import TextJson from "../src/data/ja.json";
 import Terms from '../src/components/Terms';
 import Links from '../src/components/Links';
+
+library.add(faYoutube, faTwitter, faGithubAlt,faStickyNote, faHeadphones, faEye);
 
 const root = css`
     background-color: ${Color.Gray};

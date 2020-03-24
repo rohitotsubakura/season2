@@ -94,7 +94,8 @@
                     "heading": "ABOUT",
                     "subheading": "アングラ美男子の日常覗き放題！",
                     "body": "ある時は残酷劇の登場人物、ある時はヴィジュアル系バンドの演者。アンダーグラウンドな舞台に立ってそうな白塗りの美男子が、何故か平穏な生活を送っている。そんなギャップのある世界観を表現するためにツバクラロヒトは造られました。テクノロジーを拠り所とし、今日も制作、時々サービス(自宅コスプレ)！クリエイター気質な彼の日常を、ビデオレター形式でお届けします。",
-                    "link": "覗きに行く"
+                    "link": "覗きに行く",
+                    "to": "https://www.youtube.com/channel/UCpctdX7YT14M9jza4ExLUJw"
                 },
                 "profile": {
                     "heading": "PROFILE",
@@ -105,7 +106,8 @@
                 "videos": {
                     "heading": "VIDEOS",
                     "subheading": "動画の一部です。",
-                    "link": "もっと見る"
+                    "link": "もっと見る",
+                    "to": "https://www.youtube.com/channel/UCpctdX7YT14M9jza4ExLUJw"
                 },
                 "goods": {
                     "heading": "GOODS",
@@ -139,10 +141,37 @@
                 "links": {
                     "heading": "LINKS",
                     "subheading": "使っているSNS、連絡先",
-                    "twitter": "https://twitter.com/RhtTbkr",
-                    "youtube": "https://www.youtube.com/channel/UCpctdX7YT14M9jza4ExLUJw",
-                    "github": "https://github.com/rohitotsubakura",
-                    "note": "https://note.com/frontendpict"
+                    "items": [
+
+                        {
+                            "name": "Twitter",
+                            "url": "https://twitter.com/Rhttbkr",
+                            "brandColor": "#1da1f2",
+                            "faIconPrefix" : "fab",
+                            "faIconName": "twitter"
+                        },
+                        {
+                            "name": "YouTube",
+                            "url": "https://www.youtube.com/channel/UCpctdX7YT14M9jza4ExLUJw",
+                            "brandColor": "#ff0000",
+                            "faIconPrefix" : "fab",
+                            "faIconName": "youtube"
+                        },
+                        {
+                            "name": "GitHub",
+                            "url": "https://github.com/rohitotsubakura",
+                            "brandColor": "#333333",
+                            "faIconPrefix" : "fab",
+                            "faIconName" : "github-alt"
+                        },
+                        {
+                            "name": "note",
+                            "url": "https://note.com/frontendpict",
+                            "brandColor": "#2CB696",
+                            "faIconPrefix" : "fas",
+                            "faIconName" : "sticky-note"
+                        }
+                    ]
                 }
             },
             "404" : {

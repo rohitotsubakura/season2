@@ -8,7 +8,9 @@ import Size from "../styles/Size";
 import Typography from "../styles/Typography";
 
 const root = css`
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: ${Color.Primary};
     background-color: ${Color.White};
     ${Typography.Button};
@@ -17,7 +19,8 @@ const root = css`
     box-shadow: 0 ${Size(0.5)} ${Size(2)} ${Color.BoundaryBlack};
     padding: ${Size(2)} ${Size(4)};
     transition: all 300ms 0s ease;
-    & > i {
+    & > svg {
+        width: ${Size(4)};
         margin-right: ${Size(1)};
     }
     &:hover {

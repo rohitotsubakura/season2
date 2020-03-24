@@ -7,8 +7,4 @@ export default {
     Primary: 'rgba(198, 82, 82, 1)',
     Secondary: 'rgba(242, 229, 208, 1)',
     BackToTop: 'rgba(208, 44, 44, 1)',
-    SnsTwitter: '#1da1f2',
-    SnsYouTube: '#ff0000',
-    SnsGitHub: '#333333',
-    SnsNote: 'rgba(111, 207, 190, 1)'
 }
