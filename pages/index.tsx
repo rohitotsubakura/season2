@@ -13,9 +13,15 @@ import About from '../src/components/About';
 import News from '../src/components/News';
 import Profile from '../src/components/Profile';
 import PageHead from "../src/components/Head";
+import Videos from '../src/components/Videos';
+import Goods from '../src/components/Goods';
+
+import TextJson from "../src/data/ja.json";
+import Terms from '../src/components/Terms';
+import Links from '../src/components/Links';
 
 const root = css`
-    background-color: ${Color.Primary};
+    background-color: ${Color.Gray};
     position: relative;
     display: flex;
     flex-direction: column;
@@ -23,21 +29,34 @@ const root = css`
     width: 100%;
 `;
 
+const IndexText = TextJson[0].ja.common.ogp;
+
+const IndexHeadProps = {
+    title: IndexText.title.top,
+    url: IndexText.url.top,
+    ogpthumb: IndexText.ogpthumb.top,
+    description: IndexText.description.top
+};
+
 const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
     <>
         <Global />
-        <PageHead title={"TOP"}/>
+        <PageHead
+            title={IndexHeadProps.title}
+            url={IndexHeadProps.url}
+            ogpthumb={IndexHeadProps.ogpthumb}
+            description={IndexHeadProps.description}
+        />
         <div css={root}>
             <Header />
             <MainVisual />
             <News />
             <About />
             <Profile />
-            <Button
-                to='https://github.com/rohitotsubakura/season2'
-            >
-                覗きに行く
-            </Button>
+            <Videos />
+            <Goods />
+            <Terms />
+            <Links />
             <Footer year={2020} copyright={"Rohito Tsubakura"}></Footer>
         </div>
     </>
