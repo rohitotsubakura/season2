@@ -50,7 +50,7 @@ const Goods: React.FC<GoodsProps> = () => {
                 <p>{goodsText.subheading}</p> 
                 <p>{goodsText.body}</p>
                 <Button to={goodsText.to}>
-                    {goodsText.link}
+                    <i className="far fa-eye"></i>{goodsText.link}
                 </Button>
             </div>
         </SkewContainer>

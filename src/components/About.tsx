@@ -58,7 +58,7 @@ const About: React.FC<AboutProps> = () => {
                 <h3>{aboutText.subheading}</h3> 
                 <p>{aboutText.body}</p>
                 <Button to={""}>
-                    覗きに行く
+                    <i className="far fa-eye"></i>覗きに行く
                 </Button>
             </div>
         </SkewContainer>

@@ -49,7 +49,7 @@ const Videos: React.FC<VideosProps> = () => {
                 <h2>{videosText.heading}</h2>
                 <p>{videosText.subheading}</p> 
                 <Button to={TextJson[0].ja.top.links.youtube}>
-                    もっと見る
+                    <i className="far fa-eye"></i>もっと見る
                 </Button>
             </div>
         </SkewContainer>

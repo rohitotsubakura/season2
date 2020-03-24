@@ -61,7 +61,7 @@ const News: React.FC<NewsProps> = () => {
                     <NewsArticle />
                 </div>
                 <Button to={"/news"}>
-                    もっと見る
+                    <i className="far fa-eye"></i>もっと見る
                 </Button>
             </div>
         </SkewContainer>

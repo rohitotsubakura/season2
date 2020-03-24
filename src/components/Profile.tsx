@@ -27,7 +27,6 @@ const innerStyle = css`
     display: flex;
     flex-direction: column;
     align-items: center;
-
     width: 100%;
     & > h2 {
         color: ${Color.White};
@@ -49,6 +48,7 @@ const innerStyle = css`
 const descStyle = css`
     display: flex;
     flex-direction: row;
+    width: ${Size(200)};
     & > div {
         width: 46%;
         margin-right: 2%;
@@ -57,7 +57,7 @@ const descStyle = css`
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        align-items: flex-end;
+        align-items: center;
     }
     & > div > h2 {
         color: ${Color.White};
@@ -93,9 +93,8 @@ const Profile: React.FC<ProfileProps> = () => {
                         <p dangerouslySetInnerHTML={{__html: profileText.body}} />
                     </div>
                     <div>
-                        <p>Sample Voice</p>
                         <Button to={""}>
-                            声を聞く
+                            <i className="fas fa-headphones-alt"></i>声を聞く
                         </Button>
                     </div>
                 </div>

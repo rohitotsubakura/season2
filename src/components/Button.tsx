@@ -17,6 +17,9 @@ const root = css`
     box-shadow: 0 ${Size(0.5)} ${Size(2)} ${Color.BoundaryBlack};
     padding: ${Size(2)} ${Size(4)};
     transition: all 300ms 0s ease;
+    & > i {
+        margin-right: ${Size(1)};
+    }
     &:hover {
         background-color: ${Color.Primary};
         color: ${Color.White};
