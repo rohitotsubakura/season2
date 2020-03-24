@@ -14,6 +14,7 @@ import News from '../src/components/News';
 import Profile from '../src/components/Profile';
 import PageHead from "../src/components/Head";
 import Videos from '../src/components/Videos';
+import Goods from '../src/components/Goods';
 
 import TextJson from "../src/data/ja.json";
 
@@ -51,6 +52,7 @@ const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
             <About />
             <Profile />
             <Videos />
+            <Goods />
             <Button
                 to='https://github.com/rohitotsubakura/season2'
             >

@@ -110,7 +110,9 @@
                 "goods": {
                     "heading": "GOODS",
                     "subheading": "グッズ販売(BOOTH商品ページに飛びます)",
-                    "body": "comming soon..."
+                    "body": "comming soon...",
+                    "link": "お店を覗く",
+                    "to": "https://monotech.booth.pm/"
                 },
                 "terms": {
                     "heading": "TERMS OF USE",
