@@ -10,6 +10,17 @@ const fontFamily: fontFamilyType = {
     sansSerif: `font-family: 'Noto Sans JP', sans-serif;`
 };
 
+const Hero = css`
+    ${fontFamily.serif}
+    font-size: 10rem;
+    line-height: 11.2rem;
+    font-weight: 900;
+    @media (max-width: 768px) {
+        font-size: 8rem;
+        line-height: 9.2rem; 
+    }
+`;
+
 const Display2 = css`
     ${fontFamily.serif}
     font-size: 3rem;
@@ -88,6 +99,7 @@ const Caption = css`
 `;
 
 export default {
+    Hero: Hero,
     Display2: Display2,
     Display1: Display1,
     Heading: Heading,

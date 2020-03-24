@@ -17,6 +17,8 @@ const root = css`
     ${Typography.Body};
     background-color: ${Color.Black};
     padding: ${Size(0.5)} 0;
+    margin-top: auto;
+    z-index: 10;
 `;
 
 type FooterProps = {
