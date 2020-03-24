@@ -16,6 +16,11 @@ const root = css`
     border-radius: ${Size(1)};
     box-shadow: 0 ${Size(0.5)} ${Size(2)} ${Color.BoundaryBlack};
     padding: ${Size(2)} ${Size(4)};
+    transition: all 300ms 0s ease;
+    &:hover {
+        background-color: ${Color.Primary};
+        color: ${Color.White};
+    }
 `;
 
 type LinkProps = {
