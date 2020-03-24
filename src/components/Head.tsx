@@ -14,7 +14,6 @@ const PageHead: React.FC<HeadProps> = ({title, url, ogpthumb, description}) => {
             <title>ツバクラロヒト公式 - {title}</title>
             <meta charSet="utf-8" />
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
             <meta property="og:url" content={url} /> 
             <meta property="og:title" content={`ツバクラロヒト公式 - ${title}`} /> 
             <meta property="og:image" content={ogpthumb} /> 

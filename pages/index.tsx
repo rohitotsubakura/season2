@@ -18,9 +18,10 @@ import Goods from '../src/components/Goods';
 
 import TextJson from "../src/data/ja.json";
 import Terms from '../src/components/Terms';
+import Links from '../src/components/Links';
 
 const root = css`
-    background-color: ${Color.Primary};
+    background-color: ${Color.Gray};
     position: relative;
     display: flex;
     flex-direction: column;
@@ -55,11 +56,7 @@ const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
             <Videos />
             <Goods />
             <Terms />
-            <Button
-                to='https://github.com/rohitotsubakura/season2'
-            >
-                覗きに行く
-            </Button>
+            <Links />
             <Footer year={2020} copyright={"Rohito Tsubakura"}></Footer>
         </div>
     </>
