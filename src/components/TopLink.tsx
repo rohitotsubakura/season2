@@ -21,9 +21,9 @@ const root = css`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: ${Size(1)};
-    width: ${Size(12.5)};
-    height: ${Size(12.5)};
+    padding: ${Size(3)};
+    width: ${Size(13)};
+    height: ${Size(13)};
     background-color: ${Color.BackToTop};
     box-shadow: 0 ${Size(0.5)} ${Size(2)} ${Color.BoundaryBlack};
     -webkit-transform: rotate(45deg);
