@@ -13,7 +13,6 @@ const root = css`
     align-items: center;
     width: 100%;
     height: 100vh;
-    margin-top: -119px;
     box-sizing: border-box;
     background-image: url("/static/images/imagekeyvisual.png");
     background-size: cover;

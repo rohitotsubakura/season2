@@ -9,7 +9,7 @@ import HeaderMenu from "./Header/HeaderMenu";
 
 const root = css`
     display: flex;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 10;
     flex-direction: row;
