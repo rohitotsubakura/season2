@@ -4,11 +4,11 @@ import { NextPage, NextPageContext } from 'next';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faStickyNote, faHeadphones, faEye } from '@fortawesome/free-solid-svg-icons';
 import { faYoutube, faTwitter, faGithubAlt } from '@fortawesome/free-brands-svg-icons';
+import axios from "axios";
 
 import { css, jsx } from "@emotion/core";
 import Global from "../src/styles/Global";
 import Color from '../src/styles/Color';
-import Button from "../src/components/Button";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import MainVisual from '../src/components/MainVisual';
@@ -23,6 +23,8 @@ import TextJson from "../src/data/ja.json";
 import Terms from '../src/components/Terms';
 import Links from '../src/components/Links';
 import TopLink from '../src/components/TopLink';
+import { Tag } from '../src/interfaces/Tag';
+import { NewsContents } from '../src/interfaces/NewsContents';
 
 library.add(faYoutube, faTwitter, faGithubAlt,faStickyNote, faHeadphones, faEye);
 
@@ -44,7 +46,11 @@ const IndexHeadProps = {
     description: IndexText.description.top
 };
 
-const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
+type NewsProps = {
+    news: NewsContents[]
+};
+
+const Home: NextPage<NewsProps> = ({news}) => (
     <>
         <Global />
         <PageHead
@@ -57,7 +63,7 @@ const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
             <Header />
             <TopLink />
             <MainVisual />
-            <News />
+            <News news={news}/>
             <About />
             <Profile />
             <Videos />
@@ -69,9 +75,17 @@ const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
     </>
 );
 
-Home.getInitialProps = async ({req}: NextPageContext) => {
-    const userAgent = req ? req.headers['user-agent'] || '' : navigator.userAgent;
-    return { userAgent };
+export async function getStaticProps() {
+    const key = {
+        headers: {'X-API-KEY': process.env.api_key},
+    };
+    const res = await axios.get(
+        `https://rhttbkr.microcms.io/api/v1/news?limit=3`,
+        key,
+    );
+    const data = await res.data.contents;
+    console.log(data);
+    return {props: {news: data}};
 };
 
 export default Home;

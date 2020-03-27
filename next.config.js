@@ -1,6 +1,8 @@
+require("dotenv").config()
+
 module.exports = {
   env: {
-    api_key: process.env.api_key
+    api_key: process.env.API_KEY
   },
   webpack: (config, options) => {
     config.module.rules.push({

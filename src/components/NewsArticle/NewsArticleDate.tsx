@@ -15,8 +15,9 @@ type NewsArticleDateProps = {
 };
 
 const NewsArticleDate: React.FC<NewsArticleDateProps> = ({date}) => {
+    const createdAt:string = new Date(date).toLocaleDateString('ja-JP');
     return (
-        <span css={root}>{date}</span>
+        <span css={root}>{createdAt}</span>
     )
 }
 

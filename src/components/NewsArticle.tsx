@@ -35,31 +35,23 @@ const secondroot = css`
     align-items: center;
 `;
 
-const tagList = [
-    {
-        id: 0,
-        name: "お知らせ"
-    },
-    {   
-        id: 1,
-        name: "動画"
-    }
-];
-
 type NewsArticleProps = {
+    title: string,
+    date: string,
+    tags: Tag[]
 };
 
-const NewsArticle: React.FC<NewsArticleProps> = () => {
+const NewsArticle: React.FC<NewsArticleProps> = ({title, date, tags}) => {
     return (
         <div css={root}>
             <Link href={"https://note.com/frontendpict/n/n1b0f8cf8e22d"}>
                 <a>
                     <NewsArticleThumbnail/>
                     <NewsArticleText>
-                        <NewsArticleTitle title={"Webサイト制作講座 #4 公開"} />
+                        <NewsArticleTitle title={title} />
                         <div css={secondroot}>
-                            <NewsArticleDate date={"2020.03.30"} />
-                            <NewsArticleTags tags={tagList} />
+                            <NewsArticleDate date={date} />
+                            <NewsArticleTags tags={tags} />
                         </div>
                     </NewsArticleText>
                 </a>

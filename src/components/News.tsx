@@ -11,6 +11,7 @@ import  TextJson  from "../data/ja.json";
 import Button from "../components/Button";
 import SkewContainer from "./SkewContainer";
 import NewsArticle from "./NewsArticle";
+import { NewsContents } from "../interfaces/NewsContents";
 
 const root = css`
     background-color: ${Color.White};
@@ -48,18 +49,29 @@ const newsStyle = css`
 const newsText = TextJson[0].ja.top.news;
 
 type NewsProps = {
+    news: NewsContents[]
 };
 
-const News: React.FC<NewsProps> = () => {
+const News: React.FC<NewsProps> = ({news}) => {
     return (
         <SkewContainer backLink={"news"} overrideStyle={root}>
             <div css={innerStyle}>
                 <h2>{newsText.heading}</h2>
                 <p>{newsText.subheading}</p>
                 <div css={newsStyle}>
-                    <NewsArticle />
-                    <NewsArticle />
-                    <NewsArticle />
+                    {
+                        news.map((item: { id: string | number | undefined; title: string; createdAt: string; tags: import("../interfaces/Tag").Tag[]; }) => {
+                            return (
+                            <React.Fragment key={item.id}>
+                                <NewsArticle
+                                    title={item.title}
+                                    date={item.createdAt}
+                                    tags={item.tags}
+                                />
+                            </React.Fragment>
+                            )
+                        })
+                    }
                 </div>
                 <Button to={"/news"}>
                     <FontAwesomeIcon icon="eye"/>もっと見る
