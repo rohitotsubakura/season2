@@ -84,7 +84,6 @@ export async function getStaticProps() {
         key,
     );
     const data = await res.data.contents;
-    console.log(data);
     return {props: {news: data}};
 };
 
