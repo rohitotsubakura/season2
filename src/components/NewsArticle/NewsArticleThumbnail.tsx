@@ -10,17 +10,21 @@ const root = css`
     height: ${Size(30)};
     width: 100%;
     border-radius: ${Size(0.5)} ${Size(0.5)} 0 0;
-    background-image: url("/static/images/lxi_makibira_bg.png");
     background-position: center;
     background-size: cover;
 `;
 
 type NewsArticleThumbnailProps = {
+    thumbnailUrl: string
 };
 
-const NewsArticleThumbnail: React.FC<NewsArticleThumbnailProps> = () => {
+const NewsArticleThumbnail: React.FC<NewsArticleThumbnailProps> = ({thumbnailUrl}) => {
+    const bgImageStyle = css`
+        background-image: url(${thumbnailUrl});
+    `;
+
     return (
-        <div css={root}></div>
+        <div css={[root, bgImageStyle]}></div>
     )
 }
 

@@ -60,15 +60,16 @@ const News: React.FC<NewsProps> = ({news}) => {
                 <p>{newsText.subheading}</p>
                 <div css={newsStyle}>
                     {
-                        news.map((item: { id: string | number | undefined; title: string; createdAt: string; tags: import("../interfaces/Tag").Tag[]; }) => {
+                        news.map((item) => {
                             return (
-                            <React.Fragment key={item.id}>
-                                <NewsArticle
-                                    title={item.title}
-                                    date={item.createdAt}
-                                    tags={item.tags}
-                                />
-                            </React.Fragment>
+                                <React.Fragment key={item.id}>
+                                    <NewsArticle
+                                        title={item.title}
+                                        date={item.createdAt}
+                                        tags={item.tags}
+                                        thumbnail={item.thumbnail}
+                                    />
+                                </React.Fragment>
                             )
                         })
                     }

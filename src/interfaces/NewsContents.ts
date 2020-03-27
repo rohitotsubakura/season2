@@ -7,4 +7,7 @@ export type NewsContents = {
     title: string,
     body: string,
     tags: Tag[],
+    thumbnail: {
+        url: string
+    }
 }

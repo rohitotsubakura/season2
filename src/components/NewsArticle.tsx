@@ -38,15 +38,18 @@ const secondroot = css`
 type NewsArticleProps = {
     title: string,
     date: string,
-    tags: Tag[]
+    tags: Tag[],
+    thumbnail: {
+        url: string
+    }
 };
 
-const NewsArticle: React.FC<NewsArticleProps> = ({title, date, tags}) => {
+const NewsArticle: React.FC<NewsArticleProps> = ({title, date, tags, thumbnail}) => {
     return (
         <div css={root}>
             <Link href={"https://note.com/frontendpict/n/n1b0f8cf8e22d"}>
                 <a>
-                    <NewsArticleThumbnail/>
+                    <NewsArticleThumbnail thumbnailUrl={thumbnail.url}/>
                     <NewsArticleText>
                         <NewsArticleTitle title={title} />
                         <div css={secondroot}>
