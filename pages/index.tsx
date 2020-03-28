@@ -45,11 +45,16 @@ const IndexHeadProps = {
     description: IndexText.description.top
 };
 
-type NewsProps = {
-    news: NewsContents[]
+type HomeProps = {
+    news: NewsContents[],
+    keyvisual: {
+        image: {
+            url: string
+        }
+    }
 };
 
-const Home: NextPage<NewsProps> = ({news}) => (
+const Home: NextPage<HomeProps> = ({news, keyvisual}) => (
     <>
         <Global />
         <PageHead
@@ -61,7 +66,7 @@ const Home: NextPage<NewsProps> = ({news}) => (
         <div css={root}>
             <Header />
             <TopLink />
-            <MainVisual />
+            <MainVisual keyvisualUrl={keyvisual.image.url}/>
             <News news={news}/>
             <About />
             <Profile />
@@ -78,12 +83,25 @@ export async function getStaticProps() {
     const key = {
         headers: {'X-API-KEY': process.env.api_key},
     };
-    const res = await axios.get(
+
+    const newsResponse = await axios.get(
         `${process.env.api_url}news?limit=3`,
         key,
     );
-    const data = await res.data.contents;
-    return {props: {news: data}};
+    const newsData = await newsResponse.data.contents;
+
+    const keyvisualResponse = await axios.get(
+        `${process.env.api_url}keyvisual`,
+        key,
+    );
+    const keyvisualData = await keyvisualResponse.data;
+
+    return {
+        props: {
+            news: newsData,
+            keyvisual: keyvisualData
+        }
+    };
 };
 
 export default Home;

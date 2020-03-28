@@ -14,7 +14,6 @@ const root = css`
     width: 100%;
     height: 100vh;
     box-sizing: border-box;
-    background-image: url("/static/images/imagekeyvisual.png");
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -30,11 +29,15 @@ const root = css`
 `;
 
 type MainVisualProps = {
+    keyvisualUrl: string
 };
 
-const MainVisual: React.FC<MainVisualProps> = () => {
+const MainVisual: React.FC<MainVisualProps> = ({keyvisualUrl}) => {
+    const bgimageStyle = css`
+        background-image: url(${keyvisualUrl});
+    `;
     return (
-        <div css={root} id="top">
+        <div css={[root, bgimageStyle]} id="top">
             <img src="/static/images/Logo_white-M.png" alt="ロゴ"/>
             <p>Web Developer | Virtual YouTuber</p>
         </div>
