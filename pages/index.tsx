@@ -23,7 +23,6 @@ import TextJson from "../src/data/ja.json";
 import Terms from '../src/components/Terms';
 import Links from '../src/components/Links';
 import TopLink from '../src/components/TopLink';
-import { Tag } from '../src/interfaces/Tag';
 import { NewsContents } from '../src/interfaces/NewsContents';
 
 library.add(faYoutube, faTwitter, faGithubAlt,faStickyNote, faHeadphones, faEye);
@@ -80,7 +79,7 @@ export async function getStaticProps() {
         headers: {'X-API-KEY': process.env.api_key},
     };
     const res = await axios.get(
-        `https://rhttbkr.microcms.io/api/v1/news?limit=3`,
+        `${process.env.api_url}news?limit=3`,
         key,
     );
     const data = await res.data.contents;

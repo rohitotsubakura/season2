@@ -2,6 +2,7 @@ require("dotenv").config()
 
 module.exports = {
   env: {
+    api_url: process.env.API_URL,
     api_key: process.env.API_KEY
   },
   webpack: (config, options) => {
