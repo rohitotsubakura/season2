@@ -129,7 +129,9 @@
                                 "ファンアート、二次創作物の制作、頒布",
                                 "動画のキャプチャ画像の引用、切り抜き動画・MADの作成"
                             ],
-                            "icon": "heart"
+                            "brandColor": "#2CB696",
+                            "faIconPrefix" : "fas",
+                            "faIconName": "heart"
                         },
                         {
                             "heading": "やってはいけないこと",
@@ -138,7 +140,9 @@
                                 "他人を誹謗中傷する目的でのキャラクターの使用",
                                 "著しく暴力的な表現、反社会的な内容、又は適切なゾーニングのないキャラクターの使用"
                             ],
-                            "icon": "ban"
+                            "brandColor": "#ff0000",
+                            "faIconPrefix" : "fas",
+                            "faIconName": "ban"
                         }
                     ]
                 },
