@@ -1,6 +1,5 @@
 /**@jsx jsx */
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { css, jsx } from "@emotion/core";
 import Size from "../styles/Size";
@@ -9,6 +8,7 @@ import Typography from "../styles/Typography";
 
 import TextJson  from "../data/ja.json";
 import SkewContainer from "./SkewContainer";
+import TermsBox from "./Terms/TermsBox";
 
 const root = css`
     position: relative;
@@ -37,6 +37,11 @@ const innerStyle = css`
     }
 `;
 
+const listStyles = css`
+    display: flex;
+    flex-direction: row;
+`;
+
 const termsText = TextJson[0].ja.top.terms;
 
 type TermsProps = {
@@ -48,6 +53,21 @@ const Terms: React.FC<TermsProps> = () => {
             <div css={innerStyle}>
                 <h2>{termsText.heading}</h2>
                 <p>{termsText.subheading}</p> 
+                <div css={listStyles}>
+                    {
+                        termsText.body.map((item) => {
+                            return(
+                                <TermsBox
+                                    heading={item.heading}
+                                    listItems={item.list}
+                                    brandColor={item.brandColor}
+                                    faIconPrefix={item.faIconPrefix}
+                                    faIconName={item.faIconName}
+                                />
+                            )
+                        })
+                    }
+                </div>
             </div>
         </SkewContainer>
     )
