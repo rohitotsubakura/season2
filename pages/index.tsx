@@ -60,10 +60,11 @@ type HomeProps = {
         image: {
             url: string
         }
-    }
+    },
+    videos: any
 };
 
-const Home: NextPage<HomeProps> = ({news, keyvisual}) => (
+const Home: NextPage<HomeProps> = ({news, keyvisual, videos}) => (
     <>
         <Global />
         <PageHead
@@ -79,7 +80,7 @@ const Home: NextPage<HomeProps> = ({news, keyvisual}) => (
             <News news={news}/>
             <About />
             <Profile />
-            <Videos />
+            <Videos videos={videos}/>
             <Goods />
             <Terms />
             <Links />
@@ -105,10 +106,15 @@ export async function getStaticProps() {
     );
     const keyvisualData = await keyvisualResponse.data;
 
+    const videoResponse = await axios.get(
+        `${process.env.yt_api_url}${process.env.yt_api_url_params}&key=${process.env.yt_api_key}`
+    );
+    const videoData = await videoResponse.data.items;
     return {
         props: {
             news: newsData,
-            keyvisual: keyvisualData
+            keyvisual: keyvisualData,
+            videos: videoData
         }
     };
 };

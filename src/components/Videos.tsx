@@ -38,17 +38,40 @@ const innerStyle = css`
     }
 `;
 
+const videoStyles = css `
+    display: flex;
+    flex-direction: row;
+    align-items: space-around;
+    justify-content: center;
+    & > iframe {
+        margin-bottom: ${Size(10)};
+        margin-right: ${Size(2)};
+    }
+`;
+
 const videosText = TextJson[0].ja.top.videos;
 
 type VideosProps = {
+    videos: [{
+        videoId: string
+    }]
 };
 
-const Videos: React.FC<VideosProps> = () => {
+const Videos: React.FC<VideosProps> = ({videos}) => {
     return (
         <SkewContainer backLink={"videos"} overrideStyle={root}>
             <div css={innerStyle}>
                 <h2>{videosText.heading}</h2>
                 <p>{videosText.subheading}</p> 
+                <div css={videoStyles}>
+                    {
+                        videos.map((item) => {
+                            return(
+                                <iframe width="320" height="180" src={`https://www.youtube.com/embed/${item.videoId}`} allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" frameBorder="0"></iframe>
+                            )
+                        })
+                    }
+                </div>
                 <Button to={TextJson[0].ja.top.videos.to}>
                     <FontAwesomeIcon icon="eye"/>もっと見る
                 </Button>
