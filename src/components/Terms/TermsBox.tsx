@@ -55,7 +55,7 @@ const TermsBox : React.FC<LinkProps> = ({ heading, listItems, brandColor, faIcon
 
     return(
         <div css={[root, brandColorStyles]}>
-            <FontAwesomeIcon icon={[faIconPrefix, faIconName]} />{name}
+            <FontAwesomeIcon icon={[faIconPrefix, faIconName]} />
             <h3>{heading}</h3>
             <ul>
                 {

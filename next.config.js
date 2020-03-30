@@ -3,7 +3,10 @@ require("dotenv").config()
 module.exports = {
   env: {
     api_url: process.env.API_URL,
-    api_key: process.env.API_KEY
+    api_key: process.env.API_KEY,
+    yt_api_url: process.env.YT_API_URL,
+    yt_api_url_params: process.env.YT_API_URL_PARAMS,
+    yt_api_key: process.env.YT_API_KEY
   },
   webpack: (config, options) => {
     config.module.rules.push({
