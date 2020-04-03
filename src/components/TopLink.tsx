@@ -21,7 +21,7 @@ const root = css`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: ${Size(3)};
+    padding: ${Size(5)};
     width: ${Size(13)};
     height: ${Size(13)};
     background-color: ${Color.BackToTop};
