@@ -2,7 +2,8 @@
   "scripts": {
     "dev": "next -p 3032",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "yarn run build && next export"
   },
   "devDependencies": {
     "@types/node": "^13.9.1",
