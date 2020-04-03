@@ -67,7 +67,7 @@ const Videos: React.FC<VideosProps> = ({videos}) => {
                     {
                         videos.map((item) => {
                             return(
-                                <iframe key={item.videoId} width="320" height="180" src={`https://www.youtube.com/embed/${item.videoId}`} allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" frameBorder="0"></iframe>
+                                <iframe key={item.videoId} width="320" height="180" src={`https://www.youtube-nocookie.com/embed/${item.videoId}`} allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameBorder="0"></iframe>
                             )
                         })
                     }
