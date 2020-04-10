@@ -22,27 +22,23 @@ const root = css`
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100vh;
+    height: 85vh;
+    margin-top: ${Size(25)};
 `;
 
 const innerStyle = css`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    z-index: 3;
-    color: ${Color.White};
-    & > h1 {
-        ${Typography.Hero};
-        margin-bottom: ${Size(1)};
-    }
+    width: ${Size(100)};
     & > h2 {
+        color: ${Color.Black};
         ${Typography.Display1};
-        margin-bottom: ${Size(5)};
+        margin-bottom: ${Size(2.5)};
     }
     & > p {
-        ${Typography.Heading};
+        color: ${Color.Black};
+        ${Typography.Body};
         margin-bottom: ${Size(10)};
     }
 `;
@@ -68,6 +64,10 @@ const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
         />
         <div css={root}>
             <Header />
+            <div css={innerStyle}>
+                <h2>{NewsDetailText.heading}</h2>
+                <p>{NewsDetailText.subheading}</p>
+            </div>
             <Footer year={2020} copyright={"Rohito Tsubakura"}></Footer>
         </div>
     </>
