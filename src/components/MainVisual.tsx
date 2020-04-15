@@ -1,6 +1,7 @@
 /**@jsx jsx */
 import React from "react";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { css, jsx } from "@emotion/core";
 import Size from "../styles/Size";
 import Color from "../styles/Color";
@@ -18,13 +19,18 @@ const root = css`
     background-position: center;
     z-index: 1;
     & > img {
-        width: ${Size(90)};
+        width: ${Size(85)};
         margin-bottom: ${Size(2.5)};
     }
     & > p {
         color: ${Color.White};
         ${Typography.Bold};
-        margin-bottom: ${Size(10)};
+        margin-bottom: ${Size(2.5)};
+    }
+    & > svg {
+        color: ${Color.White};
+        width: ${Size(10)};
+        margin-bottom: ${Size(5)};
     }
 `;
 
@@ -40,6 +46,7 @@ const MainVisual: React.FC<MainVisualProps> = ({keyvisualUrl}) => {
         <div css={[root, bgimageStyle]} id="top">
             <img src="/static/images/Logo_white-M.png" alt="ロゴ"/>
             <p>Web Developer | Virtual YouTuber</p>
+            <FontAwesomeIcon icon="chevron-down" />
         </div>
     )
 }
