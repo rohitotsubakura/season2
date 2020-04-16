@@ -57,7 +57,7 @@ const Terms: React.FC<TermsProps> = () => {
                     {
                         termsText.body.map((item) => {
                             return(
-                                <TermsBox
+                                <TermsBox key={item.faIconName}
                                     heading={item.heading}
                                     listItems={item.list}
                                     brandColor={item.brandColor}
