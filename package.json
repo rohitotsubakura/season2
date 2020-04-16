@@ -23,12 +23,11 @@
     "@types/node-fetch": "^2.5.5",
     "@types/react-scroll": "^1.5.4",
     "axios": "^0.19.2",
-    "intersection-observer": "^0.8.0",
     "next": "^9.3.0",
     "node-fetch": "^2.6.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-inview-monitor": "^2.3.0",
+    "react-genie": "^0.1.6",
     "react-scroll": "^1.7.16"
   }
 }
