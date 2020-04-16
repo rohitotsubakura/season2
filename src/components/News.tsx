@@ -1,6 +1,7 @@
 /**@jsx jsx */
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Reveal, RevealMode, Animation } from "react-genie";
 
 import { css, jsx } from "@emotion/core";
 import Size from "../styles/Size";
@@ -38,7 +39,7 @@ const innerStyle = css`
 const newsStyle = css`
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     margin-bottom: ${Size(5)};
     & > div {
@@ -58,22 +59,24 @@ const News: React.FC<NewsProps> = ({news}) => {
             <div css={innerStyle}>
                 <h2>{newsText.heading}</h2>
                 <p>{newsText.subheading}</p>
-                <div css={newsStyle}>
-                    {
-                        news.map((item) => {
-                            return (
-                                <React.Fragment key={item.id}>
-                                    <NewsArticle
-                                        title={item.title}
-                                        date={item.createdAt}
-                                        tags={item.tags}
-                                        thumbnail={item.thumbnail}
-                                    />
-                                </React.Fragment>
-                            )
-                        })
-                    }
-                </div>
+                <Reveal mode={RevealMode.Clone}>
+                    <div css={newsStyle}>
+                        {
+                            news.map((item) => {
+                                return (
+                                    <React.Fragment key={item.id}>
+                                        <NewsArticle
+                                            title={item.title}
+                                            date={item.createdAt}
+                                            tags={item.tags}
+                                            thumbnail={item.thumbnail}
+                                        />
+                                    </React.Fragment>
+                                )
+                            })
+                        }
+                    </div>
+                </Reveal>
                 <Button to={"/news"}>
                     <FontAwesomeIcon icon="eye"/>もっと見る
                 </Button>

@@ -1,6 +1,7 @@
 /**@jsx jsx */
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Reveal, RevealMode } from "react-genie";
 
 import { css, jsx } from "@emotion/core";
 import Size from "../styles/Size";
@@ -54,14 +55,16 @@ type AboutProps = {
 const About: React.FC<AboutProps> = () => {
     return (
         <SkewContainer backLink={"about"} overrideStyle={root}>
-            <div css={innerStyle}>
-                <h2>{aboutText.heading}</h2>
-                <h3>{aboutText.subheading}</h3> 
-                <p>{aboutText.body}</p>
-                <Button to={""}>
-                    <FontAwesomeIcon icon="eye"/>覗きに行く
-                </Button>
-            </div>
+            <Reveal mode={RevealMode.Clone}>
+                <div css={innerStyle}>
+                    <h2>{aboutText.heading}</h2>
+                    <h3>{aboutText.subheading}</h3> 
+                    <p>{aboutText.body}</p>
+                    <Button to={""}>
+                        <FontAwesomeIcon icon="eye"/>覗きに行く
+                    </Button>
+                </div>
+            </Reveal>
         </SkewContainer>
     )
 }

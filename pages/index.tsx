@@ -25,6 +25,8 @@ import Links from '../src/components/Links';
 import TopLink from '../src/components/TopLink';
 import { NewsContents } from '../src/interfaces/NewsContents';
 
+import { RevealGlobalStyles } from "react-genie";
+
 library.add(
     faChevronDown,
     faYoutube,
@@ -68,6 +70,7 @@ type HomeProps = {
 const Home: NextPage<HomeProps> = ({news, keyvisual, videos}) => (
     <>
         <Global />
+        <RevealGlobalStyles />
         <PageHead
             title={IndexHeadProps.title}
             url={IndexHeadProps.url}

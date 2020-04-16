@@ -1,5 +1,6 @@
 /**@jsx jsx */
 import React from "react";
+import { Reveal, RevealMode, Animation } from "react-genie";
 
 import { css, jsx } from "@emotion/core";
 import Size from "../styles/Size";
@@ -53,21 +54,23 @@ const Terms: React.FC<TermsProps> = () => {
             <div css={innerStyle}>
                 <h2>{termsText.heading}</h2>
                 <p>{termsText.subheading}</p> 
-                <div css={listStyles}>
-                    {
-                        termsText.body.map((item) => {
-                            return(
-                                <TermsBox key={item.faIconName}
-                                    heading={item.heading}
-                                    listItems={item.list}
-                                    brandColor={item.brandColor}
-                                    faIconPrefix={item.faIconPrefix}
-                                    faIconName={item.faIconName}
-                                />
-                            )
-                        })
-                    }
-                </div>
+                <Reveal mode={RevealMode.Clone}>
+                    <div css={listStyles}>
+                        {
+                            termsText.body.map((item) => {
+                                return(
+                                    <TermsBox key={item.faIconName}
+                                        heading={item.heading}
+                                        listItems={item.list}
+                                        brandColor={item.brandColor}
+                                        faIconPrefix={item.faIconPrefix}
+                                        faIconName={item.faIconName}
+                                    />
+                                )
+                            })
+                        }
+                    </div>
+                </Reveal>
             </div>
         </SkewContainer>
     )

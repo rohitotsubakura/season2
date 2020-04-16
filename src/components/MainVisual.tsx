@@ -1,5 +1,6 @@
 /**@jsx jsx */
 import React from "react";
+import { Reveal, RevealMode, Animation } from "react-genie";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { css, jsx } from "@emotion/core";
@@ -27,7 +28,7 @@ const root = css`
         ${Typography.Bold};
         margin-bottom: ${Size(2.5)};
     }
-    & > svg {
+    & > div > svg {
         color: ${Color.White};
         width: ${Size(10)};
         margin-bottom: ${Size(5)};
@@ -46,7 +47,9 @@ const MainVisual: React.FC<MainVisualProps> = ({keyvisualUrl}) => {
         <div css={[root, bgimageStyle]} id="top">
             <img src="/static/images/Logo_white-M.png" alt="ロゴ"/>
             <p>Web Developer | Virtual YouTuber</p>
-            <FontAwesomeIcon icon="chevron-down" />
+            <Reveal mode={RevealMode.Wrap} animation={Animation.FadeInUp}>
+                <FontAwesomeIcon icon="chevron-down" />
+            </Reveal>
         </div>
     )
 }
