@@ -1,6 +1,7 @@
 /**@jsx jsx */
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Reveal, RevealMode } from "react-genie";
 
 import { css, jsx } from "@emotion/core";
 import Size from "../styles/Size";
@@ -85,21 +86,23 @@ type ProfileProps = {
 const Profile: React.FC<ProfileProps> = () => {
     return (
         <SkewContainer backLink={"profile"} overrideStyle={root}>
-            <div css={innerStyle}>
-                <h2>{profileText.heading}</h2>
-                <p>{profileText.subheading}</p> 
-                <div css={descStyle}>
-                    <div>
-                        <h3>ツバクラロヒト</h3>
-                        <p dangerouslySetInnerHTML={{__html: profileText.body}} />
-                    </div>
-                    <div>
-                        <Button to={""}>
-                            <FontAwesomeIcon icon="headphones"/><i className="fas fa-headphones-alt"></i>声を聞く
-                        </Button>
+            <Reveal mode={RevealMode.Clone}>
+                <div css={innerStyle}>
+                    <h2>{profileText.heading}</h2>
+                    <p>{profileText.subheading}</p> 
+                    <div css={descStyle}>
+                        <div>
+                            <h3>ツバクラロヒト</h3>
+                            <p dangerouslySetInnerHTML={{__html: profileText.body}} />
+                        </div>
+                        <div>
+                            <Button to={""}>
+                                <FontAwesomeIcon icon="headphones"/><i className="fas fa-headphones-alt"></i>声を聞く
+                            </Button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </Reveal>
         </SkewContainer>
     )
 }

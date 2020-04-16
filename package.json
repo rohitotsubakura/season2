@@ -27,6 +27,7 @@
     "node-fetch": "^2.6.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-genie": "^0.1.6",
     "react-scroll": "^1.7.16"
   }
 }
