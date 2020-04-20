@@ -6,6 +6,7 @@ import { css, jsx } from "@emotion/core";
 import Global from "../src/styles/Global";
 import Color from '../src/styles/Color';
 import Button from "../src/components/Button";
+import BackLinkButton from "../src/components/BackLinkButton";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import PageHead from "../src/components/Head";
@@ -108,13 +109,10 @@ const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
                 <h2>{NotFoundText.subheading}</h2>
                 <p>{NotFoundText.body}</p>
                 <div css={buttonsStyle}>
-                    {
-                        NotFoundText.links.map(item => 
-                            <Button to={item.to}>
-                                {item.name}
-                            </Button>
-                        )
-                    }
+                    <BackLinkButton>{NotFoundText.links[0].name}</BackLinkButton>
+                    <Button to={NotFoundText.links[1].to}>
+                        {NotFoundText.links[1].name}
+                    </Button>
                 </div>
             </div>
             <Footer year={2020} copyright={"Rohito Tsubakura"}></Footer>

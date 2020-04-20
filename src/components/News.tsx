@@ -1,7 +1,7 @@
 /**@jsx jsx */
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Reveal, RevealMode, Animation } from "react-genie";
+import { Reveal, RevealMode } from "react-genie";
 
 import { css, jsx } from "@emotion/core";
 import Size from "../styles/Size";
@@ -9,7 +9,7 @@ import Color from "../styles/Color";
 import Typography from "../styles/Typography";
 
 import  TextJson  from "../data/ja.json";
-import Button from "../components/Button";
+import InternalLinkButton from "../components/InternalLinkButton";
 import SkewContainer from "./SkewContainer";
 import NewsArticle from "./NewsArticle";
 import { NewsContents } from "../interfaces/NewsContents";
@@ -77,9 +77,9 @@ const News: React.FC<NewsProps> = ({news}) => {
                         }
                     </div>
                 </Reveal>
-                <Button to={"/news"}>
+                <InternalLinkButton to={"/news"}>
                     <FontAwesomeIcon icon="eye"/>もっと見る
-                </Button>
+                </InternalLinkButton>
             </div>
         </SkewContainer>
     )

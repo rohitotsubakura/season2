@@ -9,7 +9,7 @@ import Color from "../styles/Color";
 import Typography from "../styles/Typography";
 
 import  TextJson  from "../data/ja.json";
-import Button from "../components/Button";
+import SoundButton from "../components/SoundButton";
 import SkewContainer from "./SkewContainer";
 
 const root = css`
@@ -96,9 +96,9 @@ const Profile: React.FC<ProfileProps> = () => {
                             <p dangerouslySetInnerHTML={{__html: profileText.body}} />
                         </div>
                         <div>
-                            <Button to={""}>
+                            <SoundButton>
                                 <FontAwesomeIcon icon="headphones"/><i className="fas fa-headphones-alt"></i>声を聞く
-                            </Button>
+                            </SoundButton>
                         </div>
                     </div>
                 </div>
