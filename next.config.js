@@ -24,6 +24,15 @@ module.exports = {
           loader: 'url-loader',
         },
       ],
+    },
+    {
+      test: /\.(mp3)/,
+      use: [
+        options.defaultLoaders.babel,
+        {
+          loader: 'file-loader',
+        },
+      ],
     })
 
     return config
