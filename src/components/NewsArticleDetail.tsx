@@ -1,6 +1,6 @@
 /**@jsx jsx */
 import React from "react";
-import Link from "next/link";
+import MarkdownIt from "markdown-it";
 
 import { css, jsx } from "@emotion/core";
 import Size from "../styles/Size";
@@ -19,12 +19,10 @@ const root = css`
     background-color: ${Color.White};
     width: 100%;
     border-radius: ${Size(0.5)};
-    @media (max-width: 768px) {
-        width: 96%;
-    }
     & > a {
         display: block;
         text-decoration: none;
+        color: ${Color.Primary};
     }
 `;
 
@@ -35,32 +33,38 @@ const secondroot = css`
     align-items: center;
 `;
 
-type NewsArticleProps = {
+const bodyStyle = css`
+    margin: ${Size(5)} 0;
+    & > a {
+        color: ${Color.Primary};
+    }
+`;
+
+type NewsArticleDetailProps = {
     title: string,
     date: string,
     tags: Tag[],
     thumbnail: {
         url: string
-    }
+    },
+    body: string
 };
 
-const NewsArticle: React.FC<NewsArticleProps> = ({title, date, tags, thumbnail}) => {
+const NewsArticleDetail: React.FC<NewsArticleDetailProps> = ({title, date, tags, thumbnail, body}) => {
+    const md = new MarkdownIt({ html: true});
     return (
         <div css={root}>
-            <Link href={"https://note.com/frontendpict/n/n1b0f8cf8e22d"}>
-                <a>
-                    <NewsArticleThumbnail thumbnailUrl={thumbnail.url}/>
-                    <NewsArticleText>
-                        <NewsArticleTitle title={title} />
-                        <div css={secondroot}>
-                            <NewsArticleDate date={date} />
-                            <NewsArticleTags tags={tags} />
-                        </div>
-                    </NewsArticleText>
-                </a>
-            </Link>
+            <NewsArticleThumbnail thumbnailUrl={thumbnail.url}/>
+            <NewsArticleText>
+                <NewsArticleTitle title={title} />
+                <div css={secondroot}>
+                    <NewsArticleDate date={date} />
+                    <NewsArticleTags tags={tags} />
+                </div>
+                <div css={bodyStyle} dangerouslySetInnerHTML={{__html: body}} />
+            </NewsArticleText>
         </div>
     )
 }
 
-export default NewsArticle;
+export default NewsArticleDetail;
