@@ -93,7 +93,7 @@ const NotFoundHeadProps = {
     description: NotFoundHeadText.description["404"]
 };
 
-const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
+const Custom404: NextPage<{ userAgent:string }> = ({ userAgent }) => (
     <>
         <Global />
         <PageHead
@@ -120,4 +120,4 @@ const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
     </>
 );
 
-export default Home;
+export default Custom404;

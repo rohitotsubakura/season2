@@ -1,3 +1,4 @@
+const axios = require('axios');
 require("dotenv").config()
 
 module.exports = {
@@ -7,13 +8,6 @@ module.exports = {
     yt_api_url: process.env.YT_API_URL,
     yt_api_url_params: process.env.YT_API_URL_PARAMS,
     yt_api_key: process.env.YT_API_KEY
-  },
-  exportPathMap: () => {
-    return {
-      '/': {
-        page: '/'
-      }
-    }
   },
   webpack: (config, options) => {
     config.module.rules.push({

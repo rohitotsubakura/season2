@@ -1,16 +1,18 @@
 /**@jsx jsx */
 
-import { NextPage, NextPageContext } from 'next';
+import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
+import axios from "axios";
 
 import { css, jsx } from "@emotion/core";
 import Global from "../../src/styles/Global";
 import Color from '../../src/styles/Color';
-import Button from "../../src/components/Button";
 import Header from "../../src/components/Header";
 import Footer from "../../src/components/Footer";
 import PageHead from "../../src/components/Head";
+import NewsDetailLayout from "../../src/components/NewsDetailLayout";
 
 import TextJson from "../../src/data/ja.json";
+import {NewsContents} from "../../src/interfaces/NewsContents";
 import Typography from '../../src/styles/Typography';
 import Size from '../../src/styles/Size';
 
@@ -53,7 +55,12 @@ const NewsDetailHeadProps = {
     description: NewsDetailHeadText.description.newsDetail
 };
 
-const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
+type NewsDetailProps = {
+    newsDetail: NewsContents,
+    recentNews: NewsContents[],
+};
+
+const NewsDetail: NextPage<NewsDetailProps> = ({ newsDetail, recentNews }) => (
     <>
         <Global />
         <PageHead
@@ -68,9 +75,63 @@ const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
                 <h2>{NewsDetailText.heading}</h2>
                 <p>{NewsDetailText.subheading}</p>
             </div>
+            <NewsDetailLayout>
+                <main>
+                    <p>ここはメイン記事です</p>
+                </main>
+                <aside>
+                    <p>ここはサブ記事です</p>
+                </aside>
+            </NewsDetailLayout>
             <Footer year={2020} copyright={"Rohito Tsubakura"}></Footer>
         </div>
     </>
 );
 
-export default Home;
+export const getStaticPaths: GetStaticPaths = async () => {
+    const key = {
+        headers: {'X-API-KEY': process.env.api_key},
+    };
+
+    const newsResponse = await axios.get(
+        `${process.env.api_url}news`,
+        key,
+    );
+    const newsData = await newsResponse.data.contents;
+    const paths = newsData.map((news : {id: string}) => {
+        return(
+            {
+                params: {id: news.id}
+            }
+        );
+    });
+    return {paths: paths, fallback: false};
+};
+
+export const getStaticProps: GetStaticProps = async context => {
+    const key = {
+        headers: {'X-API-KEY': process.env.api_key},
+    };
+
+    const newsResponse = await axios.get(
+        `${process.env.api_url}news?limit=3`,
+        key,
+    );
+    const newsData = await newsResponse.data.contents;
+
+    const {id}: any = context.params;
+    const newsDetailResponse = await axios.get(
+        `${process.env.api_url}news/${id}`,
+        key,
+    );
+    const newsDetailData = await newsDetailResponse.data;
+
+    return {
+        props: {
+            newsDetail: newsDetailData,
+            recentNews: newsData,
+        }
+    };
+};
+
+export default NewsDetail;
