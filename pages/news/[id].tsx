@@ -1,5 +1,5 @@
 /**@jsx jsx */
-
+import React from "react";
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import axios from "axios";
 
@@ -15,6 +15,8 @@ import TextJson from "../../src/data/ja.json";
 import {NewsContents} from "../../src/interfaces/NewsContents";
 import Typography from '../../src/styles/Typography';
 import Size from '../../src/styles/Size';
+import NewsArticle from '../../src/components/NewsArticle';
+import NewsArticleDetail from '../../src/components/NewsArticleDetail';
 
 const root = css`
     background-color: ${Color.White};
@@ -25,7 +27,7 @@ const root = css`
     justify-content: center;
     width: 100%;
     height: 85vh;
-    margin-top: ${Size(25)};
+    margin-top: ${Size(30)};
 `;
 
 const innerStyle = css`
@@ -77,10 +79,29 @@ const NewsDetail: NextPage<NewsDetailProps> = ({ newsDetail, recentNews }) => (
             </div>
             <NewsDetailLayout>
                 <main>
-                    <p>ここはメイン記事です</p>
+                    <NewsArticleDetail
+                        title={newsDetail.title}
+                        date={newsDetail.createdAt}
+                        tags={newsDetail.tags}
+                        thumbnail={newsDetail.thumbnail}
+                        body={newsDetail.body}
+                    />
                 </main>
                 <aside>
-                    <p>ここはサブ記事です</p>
+                    {
+                        recentNews.map((item) => {
+                            return (
+                                <React.Fragment key={item.id}>
+                                    <NewsArticle
+                                        title={item.title}
+                                        date={item.createdAt}
+                                        tags={item.tags}
+                                        thumbnail={item.thumbnail}
+                                    />
+                                </React.Fragment>
+                            )
+                        })
+                    }
                 </aside>
             </NewsDetailLayout>
             <Footer year={2020} copyright={"Rohito Tsubakura"}></Footer>
