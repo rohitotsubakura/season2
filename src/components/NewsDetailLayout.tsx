@@ -19,8 +19,17 @@ const root = css`
         margin-bottom: ${Size(5)};
     }
     @media (max-width: 768px) {
-        width: 100%;
+        width: 92%;
+        & > main {
+            width: 100%;
+        }
         flex-direction: column;
+        & > aside {
+            width: 100%;
+        }
+        & > aside > div {
+            margin-bottom: ${Size(5)};
+        }
     }
 `;
 
