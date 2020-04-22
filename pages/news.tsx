@@ -1,18 +1,22 @@
 /**@jsx jsx */
 
-import { NextPage, NextPageContext } from 'next';
+import React from "react";
+import { NextPage, NextPageContext, GetStaticProps } from 'next';
+import axios from "axios";
 
 import { css, jsx } from "@emotion/core";
 import Global from "../src/styles/Global";
 import Color from '../src/styles/Color';
-import Button from "../src/components/Button";
 import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import PageHead from "../src/components/Head";
+import NewsArticle from "../src/components/NewsArticle";
 
 import TextJson from "../src/data/ja.json";
 import Typography from '../src/styles/Typography';
 import Size from '../src/styles/Size';
+import { Reveal, RevealMode } from 'react-genie';
+import { NewsContents } from '../src/interfaces/NewsContents';
 
 const root = css`
     background-color: ${Color.White};
@@ -43,6 +47,17 @@ const innerStyle = css`
     }
 `;
 
+const newsStyle = css`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: ${Size(2)};
+    margin-bottom: ${Size(5)};
+    & > div {
+        margin: 0 ${Size(2)};
+    }
+`;
+
 const NewsHeadText = TextJson[0].ja.common.ogp;
 const NewsText = TextJson[0].ja.common.news;
 
@@ -53,7 +68,11 @@ const NewsHeadProps = {
     description: NewsHeadText.description.newsList
 };
 
-const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
+type NewsListProps = {
+    news: NewsContents[],
+};
+
+const Home: NextPage<NewsListProps> = ({ news }) => (
     <>
         <Global />
         <PageHead
@@ -68,9 +87,45 @@ const Home: NextPage<{ userAgent:string }> = ({ userAgent }) => (
                 <h2>{NewsText.heading}</h2>
                 <p>{NewsText.subheading}</p>
             </div>
+            <Reveal mode={RevealMode.Clone}>
+                <div css={newsStyle}>
+                    {
+                        news.map((item) => {
+                            return (
+                                <React.Fragment key={item.id}>
+                                    <NewsArticle
+                                        title={item.title}
+                                        date={item.createdAt}
+                                        tags={item.tags}
+                                        thumbnail={item.thumbnail}
+                                    />
+                                </React.Fragment>
+                            )
+                        })
+                    }
+                </div>
+            </Reveal>
             <Footer year={2020} copyright={"Rohito Tsubakura"}></Footer>
         </div>
     </>
 );
+
+export const getStaticProps: GetStaticProps = async context => {
+    const key = {
+        headers: {'X-API-KEY': process.env.api_key},
+    };
+
+    const newsResponse = await axios.get(
+        `${process.env.api_url}news`,
+        key,
+    );
+    const newsData = await newsResponse.data.contents;
+
+    return {
+        props: {
+            news: newsData,
+        }
+    };
+};
 
 export default Home;
