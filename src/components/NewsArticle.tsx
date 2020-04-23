@@ -36,6 +36,7 @@ const secondroot = css`
 `;
 
 type NewsArticleProps = {
+    id: string,
     title: string,
     date: string,
     tags: Tag[],
@@ -44,10 +45,10 @@ type NewsArticleProps = {
     }
 };
 
-const NewsArticle: React.FC<NewsArticleProps> = ({title, date, tags, thumbnail}) => {
+const NewsArticle: React.FC<NewsArticleProps> = ({ id, title, date, tags, thumbnail}) => {
     return (
         <div css={root}>
-            <Link href={"https://note.com/frontendpict/n/n1b0f8cf8e22d"}>
+            <Link href={`/news/${id}`}>
                 <a>
                     <NewsArticleThumbnail thumbnailUrl={thumbnail.url}/>
                     <NewsArticleText>

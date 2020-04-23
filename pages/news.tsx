@@ -94,6 +94,7 @@ const Home: NextPage<NewsListProps> = ({ news }) => (
                             return (
                                 <React.Fragment key={item.id}>
                                     <NewsArticle
+                                        id={item.id}
                                         title={item.title}
                                         date={item.createdAt}
                                         tags={item.tags}
