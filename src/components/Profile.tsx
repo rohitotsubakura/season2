@@ -19,7 +19,7 @@ const root = css`
         position: absolute;
         background-color: ${Color.Primary};
         background-image: url("/static/images/imageprofile.png");
-        background-size: 35%;
+        background-size: ${Size(120)};
         background-position: 75% 25%;
         z-index: -1;
     }
