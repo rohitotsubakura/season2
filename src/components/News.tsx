@@ -45,6 +45,15 @@ const newsStyle = css`
     & > div {
         margin: 0 ${Size(2)};
     }
+    @media (max-width: 960px) {
+        flex-direction: column;
+        & > div {
+            margin-bottom: ${Size(5)};
+        }
+        & > div:last-child {
+            margin-bottom: 0;
+        }
+    }
 `;
 
 const newsText = TextJson[0].ja.top.news;
