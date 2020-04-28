@@ -19,8 +19,8 @@ const root = css`
         position: absolute;
         background-color: ${Color.Primary};
         background-image: url("/static/images/imageprofile.png");
-        background-size: 35%;
-        background-position: 75% 25%;
+        background-size: ${Size(120)};
+        background-position: 90% 30%;
         z-index: -1;
     }
     @media (max-width: 768px) {
@@ -63,7 +63,7 @@ const innerStyle = css`
 const descStyle = css`
     display: flex;
     flex-direction: row;
-    width: ${Size(200)};
+    max-width: ${Size(200)};
     & > div {
         width: 46%;
         margin-right: 2%;
@@ -89,7 +89,7 @@ const descStyle = css`
         ${Typography.Body};
         margin-bottom: ${Size(2.5)};
     }
-    @media (max-width: 768px) {
+    @media (max-width: 960px) {
         padding-top: ${Size(40)};
         width: 100%;
         flex-direction: column;

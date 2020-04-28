@@ -7,7 +7,7 @@ import Size from "../../styles/Size";
 
 const root = css`
     display: none;
-    @media (max-width: 768px) {
+    @media (max-width: 960px) {
         display: flex;
         flex-direction: column;
         justify-content: space-around;

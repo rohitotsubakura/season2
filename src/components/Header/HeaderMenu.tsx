@@ -30,7 +30,7 @@ const root = css`
     & > li:hover {
         color: ${Color.Primary};
     }
-    @media (max-width: 768px) {
+    @media (max-width: 960px) {
         padding: ${Size(3)} ${Size(3)};
         flex-direction: column;
         transition: width,height,transform,opacity 0.3s ease;
@@ -46,7 +46,7 @@ const root = css`
 `;
 
 const headerAnimation = css`
-    @media (max-width: 768px) {
+    @media (max-width: 960px) {
         position: relative;
         width: 50%;
         height: 90vh;
