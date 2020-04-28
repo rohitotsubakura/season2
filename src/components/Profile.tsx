@@ -23,6 +23,13 @@ const root = css`
         background-position: 75% 25%;
         z-index: -1;
     }
+    @media (max-width: 768px) {
+        &:after {
+            background-size: 130%;
+            background-position: bottom 75% left 25%;
+            filter: brightness(0.8);
+        }
+    }
 `;
 
 const innerStyle = css`
@@ -44,6 +51,12 @@ const innerStyle = css`
         color: ${Color.White};
         ${Typography.Body};
         margin-bottom: ${Size(10)};
+    }
+    @media (max-width: 768px) {
+        & > h2, & > p {
+            background-color: ${Color.Black};
+            padding: ${Size(1)};
+        }
     }
 `;
 
@@ -75,6 +88,21 @@ const descStyle = css`
         color: ${Color.White};
         ${Typography.Body};
         margin-bottom: ${Size(2.5)};
+    }
+    @media (max-width: 768px) {
+        padding-top: ${Size(40)};
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-end;
+        & > div {
+            background-color: ${Color.Gray};
+            width: 80%;
+            margin: 0 auto;
+            padding: ${Size(5)};
+        }
+        & > div:last-child {
+            padding-top: 0;
+        }
     }
 `;
 
