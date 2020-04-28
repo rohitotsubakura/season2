@@ -28,6 +28,9 @@ const root = css`
         transform-origin: bottom left;
         z-index: -1;
     }
+    @media (max-width: 768px) {
+        padding-bottom: ${Size(20)};
+    }
 `;
 
 type SkewContainerProps = {
