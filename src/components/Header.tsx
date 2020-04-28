@@ -14,9 +14,10 @@ const root = css`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: ${Size(200)};
+    width: 92%;
+    max-width: ${Size(200)};
     padding: ${Size(5)} 0;
-    @media (max-width: 768px) {
+    @media (max-width: 960px) {
         width: 92%;
         margin: 4% 0;
         padding: 0;
