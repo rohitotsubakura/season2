@@ -17,7 +17,7 @@ const root = css`
     position: fixed;
     top: 80vh;
     right: 20vw;
-    z-index: 10;
+    z-index: 9;
     flex-direction: column;
     justify-content: center;
     align-items: center;

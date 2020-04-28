@@ -1,5 +1,5 @@
 /**@jsx jsx */
-import React from "react";
+import React, { useRef } from "react";
 
 import { css, jsx } from "@emotion/core";
 import Color from "../../styles/Color";
@@ -7,6 +7,8 @@ import Size from "../../styles/Size";
 import HeaderLink from "./HeaderLink";
 
 import TextJson from "../../data/ja.json";
+import HeaderHumburger from "./HeaderHumburger";
+import { useOnClickOutside } from "./hooks";
 
 const root = css`
     display: flex;
@@ -22,29 +24,70 @@ const root = css`
         margin-right: ${Size(4)};
         transition: all 300ms 0s ease;
     }
-    & > li:last-child {
+    & > li:nth-child(7) {
         margin-right: 0;
     }
-    &> li:hover {
+    & > li:hover {
         color: ${Color.Primary};
+    }
+    @media (max-width: 768px) {
+        padding: ${Size(3)} ${Size(3)};
+        flex-direction: column;
+        transition: width,height,transform,opacity 0.3s ease;
+        & > li {
+            display: none;
+            margin-right: 0;
+            order: 2;
+        }
+        & > button {
+            order: 1;
+        }
+    }
+`;
+
+const headerAnimation = css`
+    @media (max-width: 768px) {
+        position: relative;
+        width: 50%;
+        height: 90vh;
+        padding-top: 0;
+        li {
+            display: flex;
+        }
+        & > button {
+            position: absolute;
+            top: ${Size(3)};
+            right: ${Size(3)};
+            margin-left: auto;
+        }
     }
 `;
 
 const HeaderLinkList = TextJson[0].ja.common.header.list;
 
 type HeaderMenuProps = {
+    open: boolean,
+    setOpen: Function
 };
 
-const HeaderMenu: React.FC<HeaderMenuProps> = () => {
+const HeaderMenu: React.FC<HeaderMenuProps> = ({open, setOpen}) => {
+    const node = useRef<HTMLUListElement>(null);
+    useOnClickOutside(node, () => setOpen(false));
     return (
-        <ul css={root}>
+        <ul css={open ? [root, headerAnimation] : root} ref={node}>
             {
                 HeaderLinkList.map( item => 
                     <React.Fragment key={item.name}>
-                        <HeaderLink name={item.name} to={item.to}/>
+                        <HeaderLink
+                            name={item.name}
+                            to={item.to}
+                            open={open}
+                            setOpen={setOpen}
+                        />
                     </React.Fragment>
                 )
             }
+            <HeaderHumburger open={open} setOpen={setOpen}/>
         </ul>
     )
 }

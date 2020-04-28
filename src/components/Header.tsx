@@ -1,6 +1,5 @@
 /**@jsx jsx */
-import React from "react";
-import Link from "next/link";
+import React, {useState, useRef} from "react";
 
 import { css, jsx } from "@emotion/core";
 import Size from "../styles/Size";
@@ -17,16 +16,25 @@ const root = css`
     align-items: center;
     width: ${Size(200)};
     padding: ${Size(5)} 0;
+    @media (max-width: 768px) {
+        width: 92%;
+        margin: 4% 0;
+        padding: 0;
+        align-items: flex-start;
+    }
 `;
 
+
 type HeaderProps = {
+    open: boolean,
+    setOpen: Function
 };
 
-const Header: React.FC<HeaderProps> = () => {
+const Header: React.FC<HeaderProps> = ({open, setOpen}) => {
     return (
         <nav css={root}>
             <HeaderLogo to={'/'}/>
-            <HeaderMenu />
+            <HeaderMenu open={open} setOpen={setOpen} />
         </nav>
     )
 }
