@@ -4,7 +4,8 @@ import { NextPage, NextPageContext } from 'next';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faStickyNote, faHeadphones, faEye, faHeart, faBan, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { faYoutube, faTwitter, faGithubAlt } from '@fortawesome/free-brands-svg-icons';
-import axios from "axios";
+import axios from "axios"; 
+import React, { useState } from "react";
 
 import { css, jsx } from "@emotion/core";
 import Global from "../src/styles/Global";
@@ -67,31 +68,34 @@ type HomeProps = {
     videos: any
 };
 
-const Home: NextPage<HomeProps> = ({news, keyvisual, videos}) => (
-    <>
-        <Global />
-        <RevealGlobalStyles />
-        <PageHead
-            title={IndexHeadProps.title}
-            url={IndexHeadProps.url}
-            ogpthumb={IndexHeadProps.ogpthumb}
-            description={IndexHeadProps.description}
-        />
-        <div css={root}>
-            <Header />
-            <TopLink />
-            <MainVisual keyvisualUrl={keyvisual.image.url}/>
-            <News news={news}/>
-            <About />
-            <Profile />
-            <Videos videos={videos}/>
-            <Goods />
-            <Terms />
-            <Links />
-            <Footer year={2020} copyright={"Rohito Tsubakura"}></Footer>
-        </div>
-    </>
-);
+const Home: NextPage<HomeProps> = ({news, keyvisual, videos}) => {
+    const [open, setOpen] = useState(false);
+    return (
+        <>
+            <Global />
+            <RevealGlobalStyles />
+            <PageHead
+                title={IndexHeadProps.title}
+                url={IndexHeadProps.url}
+                ogpthumb={IndexHeadProps.ogpthumb}
+                description={IndexHeadProps.description}
+            />
+            <div css={root}>
+                <Header open={open} setOpen={setOpen} />
+                <TopLink />
+                <MainVisual keyvisualUrl={keyvisual.image.url}/>
+                <News news={news}/>
+                <About />
+                <Profile />
+                <Videos videos={videos}/>
+                <Goods />
+                <Terms />
+                <Links />
+                <Footer year={2020} copyright={"Rohito Tsubakura"}></Footer>
+            </div>
+        </>
+    );
+};
 
 export async function getStaticProps() {
     const key = {
