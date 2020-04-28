@@ -13,7 +13,7 @@ const root = css`
     & > a {
         text-decoration: none;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 960px) {
         display: flex;
         justify-content: center;
         width: 100%;

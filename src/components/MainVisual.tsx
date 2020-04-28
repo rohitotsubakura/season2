@@ -20,7 +20,7 @@ const root = css`
     background-position: center;
     z-index: 1;
     & > img {
-        width: ${Size(85)};
+        width: ${Size(80)};
         margin-bottom: ${Size(2.5)};
     }
     & > p {
@@ -32,6 +32,12 @@ const root = css`
         color: ${Color.White};
         width: ${Size(10)};
         margin-bottom: ${Size(5)};
+    }
+    @media (max-width: 960px) {
+        & > img {
+            width: ${Size(60)};
+            margin-bottom: ${Size(2.5)};
+        }
     }
 `;
 
