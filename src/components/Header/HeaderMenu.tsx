@@ -7,6 +7,7 @@ import Size from "../../styles/Size";
 import HeaderLink from "./HeaderLink";
 
 import TextJson from "../../data/ja.json";
+import HeaderHumburger from "./HeaderHumburger";
 
 const root = css`
     display: flex;
@@ -45,6 +46,7 @@ const HeaderMenu: React.FC<HeaderMenuProps> = () => {
                     </React.Fragment>
                 )
             }
+            <HeaderHumburger/>
         </ul>
     )
 }
