@@ -34,6 +34,16 @@ const root = css`
         color: ${Color.White};
         ${Typography.Bold};
     } 
+    @media (max-width: 960px) {
+        top: 85vh;
+        right: 7vw;
+        padding: ${Size(5)};
+        width: ${Size(6)};
+        height: ${Size(6)};
+        & > div {
+            ${Typography.Caption};
+        }
+    }
     
 `;
 
