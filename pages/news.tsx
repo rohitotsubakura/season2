@@ -25,16 +25,18 @@ const root = css`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 85vh;
+    max-width: 100%;
+    min-height: 85vh;
     margin-top: ${Size(25)};
+    overflow: hidden;
 `;
 
 const innerStyle = css`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: ${Size(100)};
+    width: 100%;
+    max-width: ${Size(100)};
     & > h2 {
         color: ${Color.Black};
         ${Typography.Display1};
@@ -48,6 +50,8 @@ const innerStyle = css`
 `;
 
 const newsStyle = css`
+    width: 100%;
+    max-width: ${Size(200)};
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
@@ -55,6 +59,25 @@ const newsStyle = css`
     margin-bottom: ${Size(5)};
     & > div {
         margin: 0 ${Size(2)};
+    }
+    @media (max-width: 960px) {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-around;
+        & > div {
+            width: 48%;
+            margin-bottom: ${Size(5)};
+        }
+    }
+    @media (max-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        & > div {
+            width: 100%;
+            margin-bottom: ${Size(5)};
+        }
     }
 `;
 
