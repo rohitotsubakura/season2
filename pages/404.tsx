@@ -5,15 +5,14 @@ import { NextPage, NextPageContext } from 'next';
 import { css, jsx } from "@emotion/core";
 import Global from "../src/styles/Global";
 import Color from '../src/styles/Color';
-import Button from "../src/components/Button";
 import BackLinkButton from "../src/components/BackLinkButton";
-import Header from "../src/components/Header";
 import Footer from "../src/components/Footer";
 import PageHead from "../src/components/Head";
 
 import TextJson from "../src/data/ja.json";
 import Typography from '../src/styles/Typography';
 import Size from '../src/styles/Size';
+import InternalLinkButton from '../src/components/InternalLinkButton';
 
 const root = css`
     background-color: ${Color.Gray};
@@ -93,31 +92,32 @@ const NotFoundHeadProps = {
     description: NotFoundHeadText.description["404"]
 };
 
-const Custom404: NextPage<{ userAgent:string }> = ({ userAgent }) => (
-    <>
-        <Global />
-        <PageHead
-            title={NotFoundHeadProps.title}
-            url={NotFoundHeadProps.url}
-            ogpthumb={NotFoundHeadProps.ogpthumb}
-            description={NotFoundHeadProps.description}
-        />
-        <div css={root}>
-            <Header />
-            <div css={innerStyle}>
-                <h1>{NotFoundText.heading}</h1>
-                <h2>{NotFoundText.subheading}</h2>
-                <p>{NotFoundText.body}</p>
-                <div css={buttonsStyle}>
-                    <BackLinkButton>{NotFoundText.links[0].name}</BackLinkButton>
-                    <Button to={NotFoundText.links[1].to}>
-                        {NotFoundText.links[1].name}
-                    </Button>
+const Custom404: NextPage = () => {
+    return (
+        <>
+            <Global />
+            <PageHead
+                title={NotFoundHeadProps.title}
+                url={NotFoundHeadProps.url}
+                ogpthumb={NotFoundHeadProps.ogpthumb}
+                description={NotFoundHeadProps.description}
+            />
+            <div css={root}>
+                <div css={innerStyle}>
+                    <h1>{NotFoundText.heading}</h1>
+                    <h2>{NotFoundText.subheading}</h2>
+                    <p>{NotFoundText.body}</p>
+                    <div css={buttonsStyle}>
+                        <BackLinkButton>{NotFoundText.links[0].name}</BackLinkButton>
+                        <InternalLinkButton to={NotFoundText.links[1].to}>
+                            {NotFoundText.links[1].name}
+                        </InternalLinkButton>
+                    </div>
                 </div>
+                <Footer year={2020} copyright={"Rohito Tsubakura"}></Footer>
             </div>
-            <Footer year={2020} copyright={"Rohito Tsubakura"}></Footer>
-        </div>
-    </>
-);
+        </>
+    );
+};
 
 export default Custom404;
