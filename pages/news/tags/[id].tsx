@@ -1,6 +1,6 @@
 /**@jsx jsx */
 
-import React from "react";
+import React, { useState } from "react";
 import { NextPage, NextPageContext, GetStaticProps, GetStaticPaths } from 'next';
 import axios from "axios";
 
@@ -73,44 +73,47 @@ type NewsListProps = {
     news: NewsContents[],
 };
 
-const Home: NextPage<NewsListProps> = ({ news }) => (
-    <>
-        <Global />
-        <PageHead
-            title={NewsHeadProps.title}
-            url={NewsHeadProps.url}
-            ogpthumb={NewsHeadProps.ogpthumb}
-            description={NewsHeadProps.description}
-        />
-        <div css={root}>
-            <Header />
-            <div css={innerStyle}>
-                <h2>{NewsText.heading}</h2>
-                <p>{NewsText.subheading}</p>
-            </div>
-            <Reveal mode={RevealMode.Clone}>
-                <div css={newsStyle}>
-                    {
-                        news.map((item) => {
-                            return (
-                                <React.Fragment key={item.id}>
-                                    <NewsArticle
-                                        id={item.id}
-                                        title={item.title}
-                                        date={item.createdAt}
-                                        tags={item.tags}
-                                        thumbnail={item.thumbnail}
-                                    />
-                                </React.Fragment>
-                            )
-                        })
-                    }
+const Home: NextPage<NewsListProps> = ({ news }) => {
+    const [open, setOpen] = useState(false);
+    return (
+        <>
+            <Global />
+            <PageHead
+                title={NewsHeadProps.title}
+                url={NewsHeadProps.url}
+                ogpthumb={NewsHeadProps.ogpthumb}
+                description={NewsHeadProps.description}
+            />
+            <div css={root}>
+                <Header open={open} setOpen={setOpen}/>
+                <div css={innerStyle}>
+                    <h2>{NewsText.heading}</h2>
+                    <p>{NewsText.subheading}</p>
                 </div>
-            </Reveal>
-            <Footer year={2020} copyright={"Rohito Tsubakura"}></Footer>
-        </div>
-    </>
-);
+                <Reveal mode={RevealMode.Clone}>
+                    <div css={newsStyle}>
+                        {
+                            news.map((item) => {
+                                return (
+                                    <React.Fragment key={item.id}>
+                                        <NewsArticle
+                                            id={item.id}
+                                            title={item.title}
+                                            date={item.createdAt}
+                                            tags={item.tags}
+                                            thumbnail={item.thumbnail}
+                                        />
+                                    </React.Fragment>
+                                )
+                            })
+                        }
+                    </div>
+                </Reveal>
+                <Footer year={2020} copyright={"Rohito Tsubakura"}></Footer>
+            </div>
+        </>
+    );
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const key = {

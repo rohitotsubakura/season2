@@ -1,5 +1,5 @@
 /**@jsx jsx */
-import React from "react";
+import React, { useState } from "react";
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import axios from "axios";
 
@@ -62,53 +62,56 @@ type NewsDetailProps = {
     recentNews: NewsContents[],
 };
 
-const NewsDetail: NextPage<NewsDetailProps> = ({ newsDetail, recentNews }) => (
-    <>
-        <Global />
-        <PageHead
-            title={NewsDetailHeadProps.title}
-            url={NewsDetailHeadProps.url}
-            ogpthumb={NewsDetailHeadProps.ogpthumb}
-            description={NewsDetailHeadProps.description}
-        />
-        <div css={root}>
-            <Header />
-            <div css={innerStyle}>
-                <h2>{NewsDetailText.heading}</h2>
-                <p>{NewsDetailText.subheading}</p>
+const NewsDetail: NextPage<NewsDetailProps> = ({ newsDetail, recentNews }) => {
+    const [open, setOpen] = useState(false);
+    return (
+        <>
+            <Global />
+            <PageHead
+                title={NewsDetailHeadProps.title}
+                url={NewsDetailHeadProps.url}
+                ogpthumb={NewsDetailHeadProps.ogpthumb}
+                description={NewsDetailHeadProps.description}
+            />
+            <div css={root}>
+                <Header open={open} setOpen={setOpen}/>
+                <div css={innerStyle}>
+                    <h2>{NewsDetailText.heading}</h2>
+                    <p>{NewsDetailText.subheading}</p>
+                </div>
+                <NewsDetailLayout>
+                    <main>
+                        <NewsArticleDetail
+                            title={newsDetail.title}
+                            date={newsDetail.createdAt}
+                            tags={newsDetail.tags}
+                            thumbnail={newsDetail.thumbnail}
+                            body={newsDetail.body}
+                        />
+                    </main>
+                    <aside>
+                        {
+                            recentNews.map((item) => {
+                                return (
+                                    <React.Fragment key={item.id}>
+                                        <NewsArticle
+                                            id={item.id}
+                                            title={item.title}
+                                            date={item.createdAt}
+                                            tags={item.tags}
+                                            thumbnail={item.thumbnail}
+                                        />
+                                    </React.Fragment>
+                                )
+                            })
+                        }
+                    </aside>
+                </NewsDetailLayout>
+                <Footer year={2020} copyright={"Rohito Tsubakura"}></Footer>
             </div>
-            <NewsDetailLayout>
-                <main>
-                    <NewsArticleDetail
-                        title={newsDetail.title}
-                        date={newsDetail.createdAt}
-                        tags={newsDetail.tags}
-                        thumbnail={newsDetail.thumbnail}
-                        body={newsDetail.body}
-                    />
-                </main>
-                <aside>
-                    {
-                        recentNews.map((item) => {
-                            return (
-                                <React.Fragment key={item.id}>
-                                    <NewsArticle
-                                        id={item.id}
-                                        title={item.title}
-                                        date={item.createdAt}
-                                        tags={item.tags}
-                                        thumbnail={item.thumbnail}
-                                    />
-                                </React.Fragment>
-                            )
-                        })
-                    }
-                </aside>
-            </NewsDetailLayout>
-            <Footer year={2020} copyright={"Rohito Tsubakura"}></Footer>
-        </div>
-    </>
-);
+        </>
+    );
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const key = {
