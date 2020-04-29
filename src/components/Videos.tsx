@@ -47,6 +47,9 @@ const videoStyles = css `
         margin-bottom: ${Size(10)};
         margin-right: ${Size(2)};
     }
+    @media (max-width: 960px) {
+        flex-direction: column;
+    }
 `;
 
 const videosText = TextJson[0].ja.top.videos;
