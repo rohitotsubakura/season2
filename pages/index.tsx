@@ -47,6 +47,7 @@ const root = css`
     flex-direction: column;
     align-items: center;
     width: 100%;
+    overflow: hidden;
 `;
 
 const IndexText = TextJson[0].ja.common.ogp;
