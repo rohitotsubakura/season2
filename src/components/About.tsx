@@ -29,7 +29,8 @@ const innerStyle = css`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: ${Size(100)};
+    width: 80%;
+    max-width: ${Size(100)};
     & > h2 {
         color: ${Color.White};
         ${Typography.Display1};
@@ -60,7 +61,7 @@ const About: React.FC<AboutProps> = () => {
                     <h2>{aboutText.heading}</h2>
                     <h3>{aboutText.subheading}</h3> 
                     <p>{aboutText.body}</p>
-                    <Button to={""}>
+                    <Button to={aboutText.to}>
                         <FontAwesomeIcon icon="eye"/>覗きに行く
                     </Button>
                 </div>

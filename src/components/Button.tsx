@@ -36,7 +36,7 @@ type LinkProps = {
 
 const Button : React.FC<LinkProps> = ({ children, to}) => {
     return(
-        <a css={root} href={to}>
+        <a css={root} href={to} target="_blank">
             { children }
         </a>
     )
