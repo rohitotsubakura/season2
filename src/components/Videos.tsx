@@ -41,7 +41,8 @@ const innerStyle = css`
 const videoStyles = css `
     display: flex;
     flex-direction: row;
-    align-items: space-around;
+    flex-wrap: wrap;
+    align-items: space-between;
     justify-content: center;
     & > iframe {
         margin-bottom: ${Size(10)};

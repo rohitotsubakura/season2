@@ -25,7 +25,8 @@ const innerStyle = css`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: ${Size(200)};
+    width: 90%;
+    max-width: ${Size(200)};
     & > h2 {
         color: ${Color.White};
         ${Typography.Display1};
@@ -44,7 +45,7 @@ const linksStyle = css`
     width: ${Size(150)};
     justify-content: space-around;
     align-items: center;
-    @media (max-width: 768px) {
+    @media (max-width: 960px) {
         width: 100%;
         flex-direction: column;
         & > * {

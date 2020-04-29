@@ -23,7 +23,7 @@ const root = css`
         width: ${Size(5)};
         margin-right: ${Size(2)};
     }
-    @media (max-width: 768px) {
+    @media (max-width: 960px) {
         margin-bottom: ${Size(5)};
     }
 `;
@@ -46,7 +46,7 @@ const SnsButton : React.FC<LinkProps> = ({ to, brandColor, name, faIconPrefix, f
     `;
 
     return(
-        <a css={[root, brandColorStyles]} href={to}>
+        <a css={[root, brandColorStyles]} href={to} target="_blank">
             <FontAwesomeIcon icon={[faIconPrefix, faIconName]} />{name}
         </a>
     )

@@ -25,7 +25,7 @@ const innerStyle = css`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%; 
+    width: 90%; 
     max-width: ${Size(200)};
     & > h2 {
         color: ${Color.Black};
