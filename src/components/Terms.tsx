@@ -25,7 +25,8 @@ const innerStyle = css`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: ${Size(200)};
+    width: 80%; 
+    max-width: ${Size(200)};
     & > h2 {
         color: ${Color.Black};
         ${Typography.Display1};
@@ -41,6 +42,9 @@ const innerStyle = css`
 const listStyles = css`
     display: flex;
     flex-direction: row;
+    @media (max-width: 960px) {
+        flex-direction: column;
+    }
 `;
 
 const termsText = TextJson[0].ja.top.terms;

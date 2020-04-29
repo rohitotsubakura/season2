@@ -15,6 +15,7 @@ const root = css`
     align-items: center;
     color: ${Color.Black};
     width: 48%;
+    margin-right: 1%;
     & > svg {
         width: ${Size(10)};
         margin: ${Size(10)};
@@ -29,7 +30,9 @@ const root = css`
         list-style: none;
         ${Typography.Body};
     }
-    @media (max-width: 768px) {
+    @media (max-width: 960px) {
+        width: 100%;
+        margin-right: 0;
         margin-bottom: ${Size(5)};
     }
 `;
