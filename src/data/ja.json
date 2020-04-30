@@ -76,6 +76,7 @@
                 "news": {
                     "heading": "What's New?",
                     "subheading": "お知らせ",
+                    "sidebarHeading": "最近のお知らせ",
                     "tagTitle": "タグで絞り込み",
                     "tags": [
                         {

@@ -18,6 +18,7 @@ import Size from '../../src/styles/Size';
 import NewsArticle from '../../src/components/NewsArticle';
 import NewsArticleDetail from '../../src/components/NewsArticleDetail';
 import TagLink from "../../src/components/NewsTag";
+import NewsSidebarTitle from "../../src/components/NewsSidebarTitle";
 
 const root = css`
     background-color: ${Color.White};
@@ -27,8 +28,11 @@ const root = css`
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 85vh;
-    margin-top: ${Size(30)};
+    margin-top: ${Size(25)};
+    overflow: hidden;
+    @media (max-width: 960px) {
+        margin-top: ${Size(20)};
+    }
 `;
 
 const innerStyle = css`
@@ -123,6 +127,7 @@ const NewsDetail: NextPage<NewsDetailProps> = ({ newsDetail, recentNews }) => {
                         />
                     </main>
                     <aside>
+                        <NewsSidebarTitle title={NewsDetailText.sidebarHeading}/>
                         {
                             recentNews.map((item) => {
                                 return (

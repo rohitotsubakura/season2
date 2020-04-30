@@ -35,7 +35,8 @@ const secondroot = css`
 
 const bodyStyle = css`
     margin: ${Size(5)} 0;
-    & > a {
+    word-break: break-all;
+    & > * > a {
         color: ${Color.Primary};
     }
 `;
