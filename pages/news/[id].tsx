@@ -123,9 +123,9 @@ const NewsDetail: NextPage<NewsDetailProps> = ({ newsDetail, recentNews }) => {
         <>
             <Global />
             <PageHead
-                title={NewsDetailHeadProps.title}
-                url={NewsDetailHeadProps.url}
-                ogpthumb={NewsDetailHeadProps.ogpthumb}
+                title={`${newsDetail.title}${NewsDetailHeadProps.title}`}
+                url={`${NewsDetailHeadProps.url}${newsDetail.id}`}
+                ogpthumb={newsDetail.thumbnail.url}
                 description={NewsDetailHeadProps.description}
             />
             <div css={root}>

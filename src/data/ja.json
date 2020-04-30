@@ -6,25 +6,25 @@
                     "title": {
                         "top": "TOP",
                         "newsList": "お知らせ一覧",
-                        "newsDetail": "お知らせ",
+                        "newsDetail": "",
                         "404": "404"
                     },
                     "url": {
-                        "top": "http://rohitotsubakura.netlify.com/",
-                        "newsList": "http://rohitotsubakura.netlify.com/news/",
-                        "newsDetail": "http://rohitotsubakura.netlify.com/news/",
-                        "404": "http://rohitotsubakura.netlify.com/404/"
+                        "top": "http://rohitotsubakura.netlify.app/",
+                        "newsList": "http://rohitotsubakura.netlify.app/news/",
+                        "newsDetail": "http://rohitotsubakura.netlify.app/news/",
+                        "404": "http://rohitotsubakura.netlify.app/404/"
                     },
                     "ogpthumb": {
-                        "top": "https://user-images.githubusercontent.com/7070710/77123061-7a65b500-6a82-11ea-8d27-f2d993af9744.png",
-                        "newsList": "",
+                        "top": "https://rohitotsubakura.netlify.app/static/images/imagekeyvisual.png",
+                        "newsList": "https://rohitotsubakura.netlify.app/static/images/image_crop.png",
                         "newsDetail": "",
-                        "404": "/static/images/image404.png"
+                        "404": "https://rohitotsubakura.netlify.app/static/images/image404.png"
                     },
                     "description": {
                         "top": "クリエイターでWebフロントエンド系な白塗り美男子VTuber、ツバクラロヒトの公式サイトです。",
                         "newsList": "VTuber「ツバクラロヒト」に関わるニュースの一覧です。",
-                        "newsDetail": "記事です。",
+                        "newsDetail": "ツバクラロヒト公式よりお知らせです。",
                         "404": "ここにはなにもないんだ。ごめんね。"
                     }
                 },
