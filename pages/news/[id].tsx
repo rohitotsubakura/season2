@@ -124,7 +124,7 @@ const NewsDetail: NextPage<NewsDetailProps> = ({ newsDetail, recentNews }) => {
                         />
                     </main>
                     <aside>
-                        <NewsSidebarTitle title={"最近のお知らせ"}/>
+                        <NewsSidebarTitle title={NewsDetailText.sidebarHeading}/>
                         {
                             recentNews.map((item) => {
                                 return (
