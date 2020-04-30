@@ -17,7 +17,7 @@ import Typography from '../../../src/styles/Typography';
 import Size from '../../../src/styles/Size';
 import { Reveal, RevealMode } from 'react-genie';
 import { NewsContents } from '../../../src/interfaces/NewsContents';
-import { Tag } from "../../../src/interfaces/Tag";
+import TagLink from "../../../src/components/NewsTag";
 
 const root = css`
     background-color: ${Color.White};
@@ -81,6 +81,38 @@ const newsStyle = css`
     }
 `;
 
+const tagStyle = css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: ${Size(100)};
+    margin-bottom: ${Size(5)};
+    & > p {
+        ${Typography.Bold};
+        color: ${Color.Primary};
+        margin-bottom: ${Size(2.5)};
+    }
+    & > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        max-width: ${Size(100)};
+        margin-bottom: ${Size(5)};
+    }
+    @media (max-width: 960px) {
+        & > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+        }
+    }
+`;
+
 const NewsHeadText = TextJson[0].ja.common.ogp;
 const NewsText = TextJson[0].ja.common.news;
 
@@ -111,6 +143,23 @@ const Home: NextPage<NewsListProps> = ({ news }) => {
                 <div css={innerStyle}>
                     <h2>{NewsText.heading}</h2>
                     <p>{NewsText.subheading}</p>
+                </div>
+                <div css={tagStyle}>
+                    <p>{NewsText.tagTitle}</p>
+                    <div>
+                        {
+                            NewsText.tags.map((tag) => {
+                                return (
+                                    <React.Fragment key={tag.name}>
+                                        <TagLink
+                                            tagName={tag.name} 
+                                            to={tag.to}
+                                        />
+                                    </React.Fragment>
+                                );
+                            })
+                        }
+                    </div>
                 </div>
                 <Reveal mode={RevealMode.Clone}>
                     <div css={newsStyle}>
