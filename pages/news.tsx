@@ -118,15 +118,14 @@ const tagStyle = css`
 const breadcrumbStyle = css`
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 92%;
     max-width: ${Size(200)};
+    margin: 0 4%;
     align-items: start;
     justify-content: start;
     margin-bottom: ${Size(5)};
     @media (max-width: 960px) {
         justify-content: center;
-        width: 92%;
-        margin: 0 4%;
         margin-bottom: ${Size(5)};
     }
 `;

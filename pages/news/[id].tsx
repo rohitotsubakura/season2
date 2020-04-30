@@ -72,13 +72,15 @@ const tagStyle = css`
         justify-content: space-around;
         align-items: center;
         width: 100%;
-        max-width: ${Size(100)};
+        max-width: ${Size(200)};
         margin-bottom: ${Size(5)};
     }
     & > div > li {
         margin-bottom: ${Size(2.5)};
     }
     @media (max-width: 960px) {
+        margin-right: 0;
+        justify-content: center;
         & > div > li {
             margin-bottom: 0;
         }
@@ -96,8 +98,6 @@ const breadcrumbStyle = css`
     margin-bottom: ${Size(5)};
     @media (max-width: 960px) {
         justify-content: center;
-        width: 92%;
-        margin: 0 4%;
         margin-bottom: ${Size(5)};
     }
 `;
