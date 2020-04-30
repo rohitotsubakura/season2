@@ -18,6 +18,7 @@ import Size from '../../../src/styles/Size';
 import { Reveal, RevealMode } from 'react-genie';
 import { NewsContents } from '../../../src/interfaces/NewsContents';
 import TagLink from "../../../src/components/NewsTag";
+import NewsBreadcrumb from "../../../src/components/NewsBreadcrumb";
 
 const root = css`
     background-color: ${Color.White};
@@ -113,6 +114,20 @@ const tagStyle = css`
     }
 `;
 
+const breadcrumbStyle = css`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: ${Size(200)};
+    align-items: start;
+    justify-content: start;
+    margin-bottom: ${Size(5)};
+    @media (max-width: 960px) {
+        width: 92%;
+        margin: 0 4%;
+    }
+`;
+
 const NewsHeadText = TextJson[0].ja.common.ogp;
 const NewsText = TextJson[0].ja.common.news;
 
@@ -125,9 +140,13 @@ const NewsHeadProps = {
 
 type NewsListProps = {
     news: NewsContents[],
+    tagData: {
+        id: string,
+        name: string
+    }
 };
 
-const Home: NextPage<NewsListProps> = ({ news }) => {
+const Home: NextPage<NewsListProps> = ({ news, tagData }) => {
     const [open, setOpen] = useState(false);
     return (
         <>
@@ -140,6 +159,9 @@ const Home: NextPage<NewsListProps> = ({ news }) => {
             />
             <div css={root}>
                 <Header open={open} setOpen={setOpen}/>
+                <div css={breadcrumbStyle}>
+                    <NewsBreadcrumb tagName={tagData.name}/>
+                </div>
                 <div css={innerStyle}>
                     <h2>{NewsText.heading}</h2>
                     <p>{NewsText.subheading}</p>
@@ -217,10 +239,16 @@ export const getStaticProps: GetStaticProps = async context => {
         key,
     );
     const newsData = await newsResponse.data.contents;
+    const tagResponse = await axios.get(
+        `${process.env.api_url}tags/${id}`,
+        key,
+    );
+    const tagData = await tagResponse.data;
 
     return {
         props: {
             news: newsData,
+            tagData: tagData
         }
     };
 };

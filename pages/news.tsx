@@ -18,6 +18,7 @@ import Size from '../src/styles/Size';
 import { Reveal, RevealMode } from 'react-genie';
 import { NewsContents } from '../src/interfaces/NewsContents';
 import TagLink from "../src/components/NewsTag";
+import NewsBreadcrumb from "../src/components/NewsBreadcrumb";
 
 const root = css`
     background-color: ${Color.White};
@@ -114,6 +115,16 @@ const tagStyle = css`
     }
 `;
 
+const breadcrumbStyle = css`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: ${Size(200)};
+    align-items: start;
+    justify-content: start;
+    margin-bottom: ${Size(5)};
+`;
+
 const NewsHeadText = TextJson[0].ja.common.ogp;
 const NewsText = TextJson[0].ja.common.news;
 
@@ -141,6 +152,9 @@ const Home: NextPage<NewsListProps> = ({ news }) => {
             />
             <div css={root}>
                 <Header open={open} setOpen={setOpen}/>
+                <div css={breadcrumbStyle}>
+                    <NewsBreadcrumb />
+                </div>
                 <div css={innerStyle}>
                     <h2>{NewsText.heading}</h2>
                     <p>{NewsText.subheading}</p>
