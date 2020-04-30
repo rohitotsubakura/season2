@@ -22,6 +22,7 @@ const root = css`
     }
     @media (max-width: 960px) {
         width: 92%;
+        margin: 0 4%;
         & > main {
             width: 100%;
         }
@@ -30,7 +31,7 @@ const root = css`
             width: 100%;
         }
         & > aside > div {
-            margin-bottom: ${Size(5)};
+            margin: 0 auto;
         }
     }
 `;

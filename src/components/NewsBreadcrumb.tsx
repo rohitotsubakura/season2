@@ -46,6 +46,9 @@ const breadcrumbStyle = css`
     & > a:hover:after {
         text-decoration: none;
     }
+    @media (max-width: 960px) {
+        ${Typography.Caption};
+    }
 `;
 
 type NewsBreadcrumbProps = {
