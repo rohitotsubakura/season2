@@ -25,6 +25,9 @@ const root = css`
             height: 100%;
         }
     }
+    @media (max-width: 480px) {
+        padding: ${Size(2)};
+    }
 `;
 
 type HeaderLinkProps = {

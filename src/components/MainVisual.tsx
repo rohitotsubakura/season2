@@ -20,7 +20,7 @@ const root = css`
     background-position: center;
     z-index: 1;
     & > img {
-        width: ${Size(80)};
+        max-width: ${Size(70)};
         margin-bottom: ${Size(2.5)};
     }
     & > p {
@@ -35,7 +35,8 @@ const root = css`
     }
     @media (max-width: 960px) {
         & > img {
-            width: ${Size(60)};
+            width: 70%;
+            max-width: ${Size(60)};
             margin-bottom: ${Size(2.5)};
         }
     }

@@ -48,8 +48,8 @@ const root = css`
 const headerAnimation = css`
     @media (max-width: 960px) {
         position: relative;
-        width: 50%;
-        height: 90vh;
+        width: 70%;
+        height: 80vh;
         padding-top: 0;
         li {
             display: flex;
