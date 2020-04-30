@@ -8,7 +8,9 @@ import Size from "../styles/Size";
 const root = css`
     display: flex;
     justify-content: space-between;
-    width: ${Size(200)};
+    width: 92%;
+    max-width: ${Size(200)};
+    margin: 0 2%;
     & > main {
         width: 74%;
     }

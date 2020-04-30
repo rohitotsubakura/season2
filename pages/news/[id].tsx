@@ -19,6 +19,7 @@ import NewsArticle from '../../src/components/NewsArticle';
 import NewsArticleDetail from '../../src/components/NewsArticleDetail';
 import TagLink from "../../src/components/NewsTag";
 import NewsSidebarTitle from "../../src/components/NewsSidebarTitle";
+import NewsBreadcrumb from "../../src/components/NewsBreadcrumb";
 
 const root = css`
     background-color: ${Color.White};
@@ -84,6 +85,23 @@ const tagStyle = css`
     }
 `;
 
+const breadcrumbStyle = css`
+    display: flex;
+    flex-direction: row;
+    width: 92%;
+    max-width: ${Size(200)};
+    margin: 0 4%;
+    align-items: start;
+    justify-content: start;
+    margin-bottom: ${Size(5)};
+    @media (max-width: 960px) {
+        justify-content: center;
+        width: 92%;
+        margin: 0 4%;
+        margin-bottom: ${Size(5)};
+    }
+`;
+
 const NewsDetailHeadText = TextJson[0].ja.common.ogp;
 const NewsDetailText = TextJson[0].ja.common.news;
 
@@ -112,6 +130,9 @@ const NewsDetail: NextPage<NewsDetailProps> = ({ newsDetail, recentNews }) => {
             />
             <div css={root}>
                 <Header open={open} setOpen={setOpen}/>
+                <div css={breadcrumbStyle}>
+                    <NewsBreadcrumb newsTitle={newsDetail.title}/>
+                </div>
                 <div css={innerStyle}>
                     <h2>{NewsDetailText.heading}</h2>
                     <p>{NewsDetailText.subheading}</p>

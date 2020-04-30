@@ -89,6 +89,17 @@ const descStyle = css`
         ${Typography.Body};
         margin-bottom: ${Size(2.5)};
     }
+    @media (max-width: 1140px) {
+        & > div:first-child {
+            background-color: ${Color.Gray};
+            width: 80%;
+            margin: 0 auto;
+            padding: ${Size(5)};
+        }
+        & > div:last-child {
+            padding-top: 0;
+        }
+    }
     @media (max-width: 960px) {
         padding-top: ${Size(40)};
         width: 100%;
@@ -99,9 +110,6 @@ const descStyle = css`
             width: 80%;
             margin: 0 auto;
             padding: ${Size(5)};
-        }
-        & > div:last-child {
-            padding-top: 0;
         }
     }
 `;
