@@ -17,7 +17,6 @@ import Typography from '../../../src/styles/Typography';
 import Size from '../../../src/styles/Size';
 import { Reveal, RevealMode } from 'react-genie';
 import { NewsContents } from '../../../src/interfaces/NewsContents';
-import { Tag } from "../../../src/interfaces/Tag";
 
 const root = css`
     background-color: ${Color.White};
