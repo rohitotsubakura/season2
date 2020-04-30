@@ -17,6 +17,7 @@ import Typography from '../../src/styles/Typography';
 import Size from '../../src/styles/Size';
 import NewsArticle from '../../src/components/NewsArticle';
 import NewsArticleDetail from '../../src/components/NewsArticleDetail';
+import TagLink from "../../src/components/NewsTag";
 
 const root = css`
     background-color: ${Color.White};
@@ -44,6 +45,38 @@ const innerStyle = css`
         color: ${Color.Black};
         ${Typography.Body};
         margin-bottom: ${Size(10)};
+    }
+`;
+
+const tagStyle = css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: ${Size(100)};
+    margin-bottom: ${Size(5)};
+    & > p {
+        ${Typography.Bold};
+        color: ${Color.Primary};
+        margin-bottom: ${Size(2.5)};
+    }
+    & > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        max-width: ${Size(100)};
+        margin-bottom: ${Size(5)};
+    }
+    & > div > li {
+        margin-bottom: ${Size(2.5)};
+    }
+    @media (max-width: 960px) {
+        & > div > li {
+            margin-bottom: 0;
+        }
     }
 `;
 
@@ -105,6 +138,24 @@ const NewsDetail: NextPage<NewsDetailProps> = ({ newsDetail, recentNews }) => {
                                 )
                             })
                         }
+
+                        <div css={tagStyle}>
+                            <p>{NewsDetailText.tagTitle}</p>
+                            <div>
+                                {
+                                    NewsDetailText.tags.map((tag) => {
+                                        return (
+                                            <React.Fragment key={tag.name}>
+                                                <TagLink
+                                                    tagName={tag.name} 
+                                                    to={tag.to}
+                                                />
+                                            </React.Fragment>
+                                        );
+                                    })
+                                }
+                            </div>
+                        </div>
                     </aside>
                 </NewsDetailLayout>
                 <Footer year={2020} copyright={"Rohito Tsubakura"}></Footer>
