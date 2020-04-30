@@ -10,8 +10,13 @@ import Link from "next/link";
 const root = css`
     ${Typography.Body};
     color: ${Color.Primary};
+    list-style: none;
     & > a {
         text-decoration: none;
+        transition: all 300ms 1s ease;
+    }
+    & > a:hover {
+        text-decoration: underline overline;
     }
     @media (max-width: 960px) {
         display: flex;
@@ -36,7 +41,7 @@ const TagLink: React.FC<TagLinkProps> = ({tagName, to}) => {
     return (
         <li css={root}>
             <Link href={to}>
-                <a>{tagName}</a>
+                <a>#{tagName}</a>
             </Link>
         </li>
     )

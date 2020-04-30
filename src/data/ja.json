@@ -78,11 +78,26 @@
                     "subheading": "お知らせ",
                     "tagTitle": "タグで絞り込み",
                     "tags": [
-                        "お知らせ",
-                        "動画",
-                        "配信予定",
-                        "記事",
-                        "今日の一枚"
+                        {
+                            "name": "お知らせ",
+                            "to": "/news/tags/news"
+                        },
+                        {
+                            "name": "動画",
+                            "to": "/news/tags/videos"
+                        },
+                        {
+                            "name": "配信予定",
+                            "to": "/news/tags/streams"
+                        },
+                        {
+                            "name": "記事",
+                            "to": "/news/tags/articles"
+                        },
+                        {
+                            "name": "今日の一枚",
+                            "to": "/news/tags/photos"
+                        }
                     ]
                 }
             },
