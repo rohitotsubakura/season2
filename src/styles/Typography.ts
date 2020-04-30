@@ -28,7 +28,11 @@ const Display2 = css`
     font-weight: 900;
     @media (max-width: 768px) {
         font-size: 2.8rem;
-        line-height: 1.6rem; 
+        line-height: 3rem; 
+    }
+    @media (max-width: 480px) {
+        font-size: 2rem;
+        line-height: 2.5rem; 
     }
 `;
 
@@ -40,6 +44,10 @@ const Display1 = css`
     @media (max-width: 768px) {
         font-size: 2.6rem;
         line-height: 3rem; 
+    }
+    @media (max-width: 480px) {
+        font-size: 1.6rem;
+        line-height: 2rem; 
     }
 `;
 

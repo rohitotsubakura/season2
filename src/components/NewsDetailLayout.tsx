@@ -18,7 +18,7 @@ const root = css`
     & > aside > div {
         margin-bottom: ${Size(5)};
     }
-    @media (max-width: 768px) {
+    @media (max-width: 960px) {
         width: 92%;
         & > main {
             width: 100%;
