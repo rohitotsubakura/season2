@@ -19,6 +19,12 @@ const root = css`
     }
 `;
 
+const tagsStyle = css`
+    ${Typography.Body};
+    color: ${Color.Primary};
+    text-decoration: none;
+`;
+
 const deepestStyle = css`
     ${Typography.Bold};
     color: ${Color.Primary};
@@ -27,12 +33,15 @@ const deepestStyle = css`
 const breadcrumbStyle = css`
     display: flex;
     flex-direction: row;
-    & > a {
+    & > a, & > p {
         margin-right: ${Size(2)};
     }
-    & > a:after {
+    & > a:after, & > p:after {
         content: '>';
         margin-left: ${Size(2)};
+    }
+    & > p:last-child:after {
+        content: '';
     }
     & > a:hover:after {
         text-decoration: none;
@@ -70,9 +79,13 @@ const NewsBreadcrumb: React.FC<WithRouterProps & NewsBreadcrumbProps > = (props)
         const target = routingMapping[pathnameHierarchy];
         links.push(
             target? (
-                <Link href={asPathHierarchy} key={asPathHierarchy}>
-                    <a css={root}>{target.title}</a>
-                </Link>
+                target == routingMapping['/news/tags']? (
+                    <p css={tagsStyle}>{target.title}</p>
+                ): (
+                    <Link href={asPathHierarchy} key={asPathHierarchy}>
+                        <a css={root}>{target.title}</a>
+                    </Link>
+                )
             ) : (
                 <Link href={asPathHierarchy} key={asPathHierarchy}>
                     <a css={root}>{asPath[i]}</a>
