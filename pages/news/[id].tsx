@@ -18,6 +18,7 @@ import Size from '../../src/styles/Size';
 import NewsArticle from '../../src/components/NewsArticle';
 import NewsArticleDetail from '../../src/components/NewsArticleDetail';
 import TagLink from "../../src/components/NewsTag";
+import NewsSidebarTitle from "../../src/components/NewsSidebarTitle";
 
 const root = css`
     background-color: ${Color.White};
@@ -123,6 +124,7 @@ const NewsDetail: NextPage<NewsDetailProps> = ({ newsDetail, recentNews }) => {
                         />
                     </main>
                     <aside>
+                        <NewsSidebarTitle title={"最近のお知らせ"}/>
                         {
                             recentNews.map((item) => {
                                 return (
