@@ -28,8 +28,11 @@ const root = css`
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 85vh;
-    margin-top: ${Size(30)};
+    margin-top: ${Size(25)};
+    overflow: hidden;
+    @media (max-width: 960px) {
+        margin-top: ${Size(20)};
+    }
 `;
 
 const innerStyle = css`
