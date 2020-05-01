@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Color from "../styles/Color";
 
 type HeadProps = {
     title: string,
@@ -20,6 +21,8 @@ const PageHead: React.FC<HeadProps> = ({title, url, ogpthumb, description}) => {
             <meta property="og:description" content={description} />
             <meta name="twitter:card" content="summary_large_image" /> 
             <meta name="twitter:site" content="@RhtTbkr" />
+            <meta name="theme-color" content={Color.Primary}/>
+            <link rel="icon" href="/static/favicon.ico"/>
             <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900|Noto+Serif+JP:400,700,900&display=swap&subset=japanese" rel="stylesheet"></link>
         </Head>
     );
