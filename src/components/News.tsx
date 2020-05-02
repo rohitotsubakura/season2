@@ -23,7 +23,8 @@ const innerStyle = css`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: ${Size(100)};
+    width: 100%;
+    max-width: ${Size(200)};
     & > h2 {
         color: ${Color.Black};
         ${Typography.Display1};
