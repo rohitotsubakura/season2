@@ -5,7 +5,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faStickyNote, faHeadphones, faEye, faHeart, faBan, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { faYoutube, faTwitter, faGithubAlt } from '@fortawesome/free-brands-svg-icons';
 import axios from "axios"; 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 
 import { css, jsx } from "@emotion/core";
 import Global from "../src/styles/Global";
@@ -27,7 +27,6 @@ import TopLink from '../src/components/TopLink';
 import { NewsContents } from '../src/interfaces/NewsContents';
 
 import { RevealGlobalStyles } from "react-genie";
-import Loading from '../src/components/Loading';
 
 library.add(
     faChevronDown,
@@ -67,22 +66,11 @@ type HomeProps = {
             url: string
         }
     },
-    videos: any,
+    videos: any
 };
 
 const Home: NextPage<HomeProps> = ({news, keyvisual, videos}) => {
     const [open, setOpen] = useState(false);
-    const [showLoader, setShowLoader] = useState(true);
-    useEffect(() => {
-        if(showLoader) {
-            const timeout = setTimeout(() => {
-                setShowLoader(false)
-            }, 1500);
-            return (() => {
-                clearTimeout(timeout)
-            });
-        } 
-    },[showLoader]);
     return (
         <>
             <Global />
@@ -94,9 +82,6 @@ const Home: NextPage<HomeProps> = ({news, keyvisual, videos}) => {
                 description={IndexHeadProps.description}
             />
             <div css={root}>
-                {
-                    showLoader ? ( <Loading /> ) : null
-                }
                 <Header open={open} setOpen={setOpen} />
                 <TopLink />
                 <MainVisual keyvisualUrl={keyvisual.image.url}/>
@@ -138,7 +123,7 @@ export async function getStaticProps() {
         props: {
             news: newsData,
             keyvisual: keyvisualData,
-            videos: videoData,
+            videos: videoData
         }
     };
 };
