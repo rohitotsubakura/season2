@@ -22,9 +22,9 @@ const root = css`
     list-style: none;
     & > li {
         margin-right: ${Size(4)};
-        transition: all 300ms 0s ease;
+        transition: color 300ms 0s ease;
     }
-    & > li:nth-child(7) {
+    & > li:nth-of-type(7) {
         margin-right: 0;
     }
     & > li:hover {
