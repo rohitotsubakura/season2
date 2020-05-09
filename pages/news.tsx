@@ -52,9 +52,8 @@ const innerStyle = css`
 `;
 
 const newsStyle = css`
-    width: 92%;
+    width: 100%;
     max-width: ${Size(200)};
-    margin: 0 4%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
