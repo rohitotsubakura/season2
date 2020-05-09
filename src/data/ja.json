@@ -1,0 +1,218 @@
+[
+    {
+        "ja" : {
+            "common" : {
+                "ogp": {
+                    "title": {
+                        "top": "TOP",
+                        "newsList": "お知らせ一覧",
+                        "newsDetail": "",
+                        "404": "404"
+                    },
+                    "url": {
+                        "top": "http://rohitotsubakura.netlify.app/",
+                        "newsList": "http://rohitotsubakura.netlify.app/news/",
+                        "newsDetail": "http://rohitotsubakura.netlify.app/news/",
+                        "404": "http://rohitotsubakura.netlify.app/404/"
+                    },
+                    "ogpthumb": {
+                        "top": "https://rohitotsubakura.netlify.app/static/images/imagekeyvisual.png",
+                        "newsList": "https://rohitotsubakura.netlify.app/static/images/image_crop.png",
+                        "newsDetail": "",
+                        "404": "https://rohitotsubakura.netlify.app/static/images/image404.png"
+                    },
+                    "description": {
+                        "top": "クリエイターでWebフロントエンド系な白塗り美男子VTuber、ツバクラロヒトの公式サイトです。",
+                        "newsList": "VTuber「ツバクラロヒト」に関わるニュースの一覧です。",
+                        "newsDetail": "ツバクラロヒト公式よりお知らせです。",
+                        "404": "ここにはなにもないんだ。ごめんね。"
+                    }
+                },
+                "header": {
+                    "list" : [
+                        {
+                            "name": "What's new?",
+                            "to": "/#news"
+                        },
+                        {
+                            "name": "ABOUT",
+                            "to": "/#about"
+                        },
+                        {
+                            "name": "PROFILE",
+                            "to": "/#profile"
+                        },
+                        {
+                            "name": "VIDEOS",
+                            "to": "/#videos"
+                        },
+                        {
+                            "name": "GOODS",
+                            "to": "/#goods"
+                        },
+                        {
+                            "name": "TERMS OF USE",
+                            "to": "/#terms"
+                        },
+                        {
+                            "name": "LINKS",
+                            "to": "/#links"
+                        }
+                    ]
+                },
+                "breadcrumb" : {
+                    "separator": ">",
+                    "links" : [
+                        {
+                            "name": "TOP",
+                            "to": "/"
+                        },
+                        {
+                            "name": "What's new?",
+                            "to": "/news"
+                        }
+                    ]
+                },
+                "news": {
+                    "heading": "What's New?",
+                    "subheading": "お知らせ",
+                    "sidebarHeading": "最近のお知らせ",
+                    "tagTitle": "タグで絞り込み",
+                    "tags": [
+                        {
+                            "name": "お知らせ",
+                            "to": "/news/tags/news"
+                        },
+                        {
+                            "name": "動画",
+                            "to": "/news/tags/videos"
+                        },
+                        {
+                            "name": "配信予定",
+                            "to": "/news/tags/streams"
+                        },
+                        {
+                            "name": "記事",
+                            "to": "/news/tags/articles"
+                        },
+                        {
+                            "name": "今日の一枚",
+                            "to": "/news/tags/photos"
+                        }
+                    ]
+                }
+            },
+            "top" : {
+                "news": {
+                    "heading": "What's New?",
+                    "subheading": "お知らせ",
+                    "link": "もっと見る"
+                },
+                "about": {
+                    "heading": "ABOUT",
+                    "subheading": "アングラ美男子の日常覗き放題！",
+                    "body": "ある時は残酷劇の登場人物、ある時はヴィジュアル系バンドの演者。アンダーグラウンドな舞台に立ってそうな白塗りの美男子が、何故か平穏な生活を送っている。そんなギャップのある世界観を表現するためにツバクラロヒトは造られました。テクノロジーを拠り所とし、今日も制作、時々サービス(自宅コスプレ)！クリエイター気質な彼の日常を、ビデオレター形式でお届けします。",
+                    "link": "覗きに行く",
+                    "to": "https://www.youtube.com/channel/UCpctdX7YT14M9jza4ExLUJw"
+                },
+                "profile": {
+                    "heading": "PROFILE",
+                    "subheading": "プロフィール",
+                    "body": "アングラでレトロ風な外見の自律型バーチャルビーイング。<br>2019年に趣味開拓のために造られ、「何か作ること」を何よりの生きがいにしている。<br>現在はWebサイト制作をメインとして、イラストや音楽など、PCでできる様々なものづくりに没頭中！",
+                    "link": "声を聞く"
+                },
+                "videos": {
+                    "heading": "VIDEOS",
+                    "subheading": "動画の一部です。",
+                    "link": "もっと見る",
+                    "to": "https://www.youtube.com/channel/UCpctdX7YT14M9jza4ExLUJw"
+                },
+                "goods": {
+                    "heading": "GOODS",
+                    "subheading": "グッズ販売(BOOTH商品ページに飛びます)",
+                    "body": "comming soon...",
+                    "link": "お店を覗く",
+                    "to": "https://monotech.booth.pm/"
+                },
+                "terms": {
+                    "heading": "TERMS OF USE",
+                    "subheading": "キャラクター利用の際は、規約を守ってご利用下さい。",
+                    "body": [
+                        {
+                            "heading": "やっていいこと",
+                            "list": [
+                                "公式画像の個人利用(端末の壁紙として設定するなど)",
+                                "ファンアート、二次創作物の制作、頒布",
+                                "動画のキャプチャ画像の引用、切り抜き動画・MADの作成"
+                            ],
+                            "brandColor": "#2CB696",
+                            "faIconPrefix" : "fas",
+                            "faIconName": "heart"
+                        },
+                        {
+                            "heading": "やってはいけないこと",
+                            "list": [
+                                "政治、宗教に関わる情報発信へのキャラクターの使用",
+                                "他人を誹謗中傷する目的でのキャラクターの使用",
+                                "著しく暴力的な表現、反社会的な内容、又は適切なゾーニングのないキャラクターの使用"
+                            ],
+                            "brandColor": "#ff0000",
+                            "faIconPrefix" : "fas",
+                            "faIconName": "ban"
+                        }
+                    ]
+                },
+                "links": {
+                    "heading": "LINKS",
+                    "subheading": "使っているSNS、連絡先",
+                    "items": [
+
+                        {
+                            "name": "Twitter",
+                            "url": "https://twitter.com/Rhttbkr",
+                            "brandColor": "#1da1f2",
+                            "faIconPrefix" : "fab",
+                            "faIconName": "twitter"
+                        },
+                        {
+                            "name": "YouTube",
+                            "url": "https://www.youtube.com/channel/UCpctdX7YT14M9jza4ExLUJw",
+                            "brandColor": "#ff0000",
+                            "faIconPrefix" : "fab",
+                            "faIconName": "youtube"
+                        },
+                        {
+                            "name": "GitHub",
+                            "url": "https://github.com/rohitotsubakura",
+                            "brandColor": "#333333",
+                            "faIconPrefix" : "fab",
+                            "faIconName" : "github-alt"
+                        },
+                        {
+                            "name": "note",
+                            "url": "https://note.com/frontendpict",
+                            "brandColor": "#2CB696",
+                            "faIconPrefix" : "fas",
+                            "faIconName" : "sticky-note"
+                        }
+                    ]
+                }
+            },
+            "404" : {
+                "heading": "404",
+                "subheading": "Not Found.",
+                "body": "お探しのページは見つかりませんでした。",
+                "links" : [
+                    {
+                        "name": "BACK",
+                        "to": ""
+                    },
+                    {
+                        "name": "TOPへ戻る",
+                        "to": "/"
+                    }
+                ]
+            }
+        }
+    }
+]
