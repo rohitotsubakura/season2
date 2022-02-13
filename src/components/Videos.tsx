@@ -44,7 +44,7 @@ const videoStyles = css `
     flex-wrap: wrap;
     align-items: space-between;
     justify-content: center;
-    & > iframe {
+    & > a {
         margin-bottom: ${Size(10)};
         margin-right: ${Size(2)};
     }
@@ -73,7 +73,9 @@ const Videos: React.FC<VideosProps> = ({videos}) => {
                     {
                         videos.map((item) => {
                             return(
-                                <iframe key={item.id.videoId} width="320" height="180" src={`https://www.youtube.com/embed/${item.id.videoId}`} allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameBorder="0"></iframe>
+                                <a href={`https://www.youtube.com/watch?v=${item.id.videoId}`} key={item.id.videoId}>
+                                    <img src={`https://img.youtube.com/vi/${item.id.videoId}/mqdefault.jpg`} width="320" height="180"/>
+                                </a>
                             )
                         })
                     }
