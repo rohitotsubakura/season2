@@ -3,13 +3,15 @@
     "dev": "next -p 3032",
     "build": "next build",
     "start": "next start",
-    "export": "yarn run build && next export"
+    "export": "yarn run build && next export",
+    "netlify": "netlify"
   },
   "devDependencies": {
     "@types/node": "^13.9.1",
     "@types/react": "^16.9.23",
     "csx": "^10.0.1",
     "dotenv": "^8.2.0",
+    "netlify-cli": "^9.4.0",
     "typescript": "^3.8.3",
     "url-loader": "^4.0.0"
   },
