@@ -46,6 +46,6 @@
     "react-scroll": "^1.7.16"
   },
   "resolutions": {
-    "@types/react": "^18.0.6"
+    "@types/react": "^16.14.28"
   }
 }
