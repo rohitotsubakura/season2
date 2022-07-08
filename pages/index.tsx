@@ -1,5 +1,3 @@
-/**@jsx jsx */
-
 import { NextPage, NextPageContext } from 'next';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faStickyNote, faHeadphones, faEye, faHeart, faBan, faChevronDown } from '@fortawesome/free-solid-svg-icons';

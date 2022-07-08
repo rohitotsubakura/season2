@@ -1,4 +1,3 @@
-/**@jsx jsx */
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Reveal, RevealMode } from "react-genie";
@@ -18,7 +17,7 @@ const root = css`
         content: "";
         position: absolute;
         background-color: ${Color.Primary};
-        background-image: url("/static/images/imageprofile.png");
+        background-image: url("/images/imageprofile.png");
         background-size: ${Size(120)};
         background-position: 90% 30%;
         z-index: -1;
