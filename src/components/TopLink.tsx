@@ -1,5 +1,5 @@
 import React from "react";
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { IconDefinition, library } from '@fortawesome/fontawesome-svg-core';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { animateScroll as scroll } from 'react-scroll';
 
@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Color from "../styles/Color";
 import Typography from "../styles/Typography";
 
-library.add(faChevronUp);
+library.add(faChevronUp as IconDefinition);
 
 const root = css`
     display: flex;
