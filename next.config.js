@@ -10,7 +10,6 @@ module.exports = {
     yt_api_url_params: process.env.YT_API_URL_PARAMS,
     yt_api_key: process.env.YT_API_KEY
   },
-  future: { webpack5: true },
   webpack: (config, options) => {
     config.module.rules.push({
       test: /\.(png|svg)/,

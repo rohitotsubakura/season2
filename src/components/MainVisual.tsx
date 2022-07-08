@@ -1,6 +1,6 @@
-/**@jsx jsx */
 import React from "react";
 import { Reveal, RevealMode, Animation } from "react-genie";
+import Image from 'next/image';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { css, jsx } from "@emotion/core";
@@ -52,7 +52,7 @@ const MainVisual: React.FC<MainVisualProps> = ({keyvisualUrl}) => {
     `;
     return (
         <div css={[root, bgimageStyle]} id="top">
-            <img src="/static/images/Logo_white-M.png" alt="ロゴ"/>
+            <img src="/images/Logo_white-M.png" alt="ロゴ" />
             <p>Web Developer | Virtual YouTuber</p>
             <Reveal mode={RevealMode.Wrap} animation={Animation.FadeInUp}>
                 <FontAwesomeIcon icon="chevron-down" />

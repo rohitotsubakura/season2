@@ -1,5 +1,3 @@
-
-/**@jsx jsx */
 import React from "react";
 import Link from "next/link";
 
@@ -24,7 +22,7 @@ type HeaderLogoTypes = {
 const HeaderLogo: React.FC<HeaderLogoTypes> = ({ to }) => (
     <Link href={to}>
         <a css={root}>
-            <img src="/static/images/mark_color-S.svg" alt="ここに画像があるはず"/>
+            <img src="/images/mark_color-S.svg" alt="ここに画像があるはず" />
         </a>
     </Link>
 );

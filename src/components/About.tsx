@@ -1,4 +1,3 @@
-/**@jsx jsx */
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Reveal, RevealMode } from "react-genie";
@@ -17,7 +16,7 @@ const root = css`
     &:after {
         content: "";
         position: absolute;
-        background-image: url("/static/images/lxi_makibira_bg.png");
+        background-image: url("/images/lxi_makibira_bg.png");
         background-size: cover/50%;
         background-position: center;
         filter: brightness(0.5);
