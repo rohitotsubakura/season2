@@ -1,6 +1,5 @@
 import React from "react";
 import { Reveal, RevealMode, Animation } from "react-genie";
-import Image from 'next/image';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { css, jsx } from "@emotion/core";
