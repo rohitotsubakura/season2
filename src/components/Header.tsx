@@ -1,4 +1,3 @@
-/**@jsx jsx */
 import React, {useState, useRef} from "react";
 
 import { css, jsx } from "@emotion/core";

@@ -1,5 +1,5 @@
 const axios = require('axios');
-const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+
 require("dotenv").config()
 
 module.exports = {
@@ -28,13 +28,8 @@ module.exports = {
           loader: 'file-loader',
         },
       ],
-    }),
-    config.plugins.push(new FaviconsWebpackPlugin({
-      logo: './src/favicon.png',
-      inject: true
     })
-    )
 
     return config
-  },
+  }
 }

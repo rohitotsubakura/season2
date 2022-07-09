@@ -1,5 +1,4 @@
-/**@jsx jsx */
-
+import React from "react";
 import { NextPage, NextPageContext } from 'next';
 
 import { css, jsx } from "@emotion/core";
@@ -23,7 +22,7 @@ const root = css`
     justify-content: center;
     width: 100%;
     height: 100vh;
-    background-image: url("/static/images/image404.png");
+    background-image: url("/images/image404.png");
     background-size: cover;
     background-position: 0 20%;
     &:before {

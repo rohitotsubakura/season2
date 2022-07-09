@@ -1,4 +1,3 @@
-/**@jsx jsx */
 import React from "react";
 
 import { css, jsx } from "@emotion/core";
@@ -55,7 +54,7 @@ type HeaderHumburgerTypes = {
 };
 
 const HeaderHumburger: React.FC<HeaderHumburgerTypes> = ({ open, setOpen }) => (
-    <button css={(open) => open ? [root,burgerAnimation] : root} onClick={() => setOpen(!open)}>
+    <button css={open ? [root,burgerAnimation] : root} onClick={() => setOpen(!open)}>
         <div/>
         <div/>
         <div/>

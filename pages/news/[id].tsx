@@ -1,4 +1,3 @@
-/**@jsx jsx */
 import React, { useState } from "react";
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import axios from "axios";

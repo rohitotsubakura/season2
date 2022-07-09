@@ -1,7 +1,5 @@
-/**@jsx jsx */
-
 import { NextPage, NextPageContext } from 'next';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { library, IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faStickyNote, faHeadphones, faEye, faHeart, faBan, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { faYoutube, faTwitter, faGithubAlt } from '@fortawesome/free-brands-svg-icons';
 import axios from "axios"; 
@@ -29,15 +27,15 @@ import { NewsContents } from '../src/interfaces/NewsContents';
 import { RevealGlobalStyles } from "react-genie";
 
 library.add(
-    faChevronDown,
-    faYoutube,
-    faTwitter,
-    faGithubAlt,
-    faStickyNote,
-    faHeadphones,
-    faEye,
-    faHeart,
-    faBan
+    faChevronDown as IconDefinition,
+    faYoutube as IconDefinition,
+    faTwitter as IconDefinition,
+    faGithubAlt as IconDefinition,
+    faStickyNote as IconDefinition,
+    faHeadphones as IconDefinition,
+    faEye as IconDefinition,
+    faHeart as IconDefinition,
+    faBan as IconDefinition
 );
 
 const root = css`

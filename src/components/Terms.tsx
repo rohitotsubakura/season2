@@ -1,4 +1,3 @@
-/**@jsx jsx */
 import React from "react";
 import { Reveal, RevealMode, Animation } from "react-genie";
 

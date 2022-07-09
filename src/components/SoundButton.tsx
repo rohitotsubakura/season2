@@ -1,5 +1,3 @@
-/**@jsx jsx */
-
 import React from "react";
 import { Howl, Howler } from "howler";
 
@@ -36,7 +34,7 @@ type SoundButtonProps = {
 };
 
 const sound: Howl = new Howl({
-    src: ['static/audio/sample_voice.mp3'],
+    src: ['/audio/sample_voice.mp3'],
 });
 
 const SoundButton : React.FC<SoundButtonProps> = ({ children }) => {

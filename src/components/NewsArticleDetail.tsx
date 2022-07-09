@@ -1,4 +1,3 @@
-/**@jsx jsx */
 import React from "react";
 import MarkdownIt from "markdown-it";
 

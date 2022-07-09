@@ -1,12 +1,10 @@
-/**@jsx jsx */
-
 import React, { useState } from "react";
 import { NextPage, NextPageContext, GetStaticProps, GetStaticPaths } from 'next';
 import axios from "axios";
 
 import { css, jsx } from "@emotion/core";
 import Global from "../../../src/styles/Global";
-import Color from ',,/../../src/styles/Color';
+import Color from '../../../src/styles/Color';
 import Header from "../../../src/components/Header";
 import Footer from "../../../src/components/Footer";
 import PageHead from "../../../src/components/Head";
