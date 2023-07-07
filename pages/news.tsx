@@ -199,7 +199,7 @@ const Home: NextPage<NewsListProps> = ({ news }) => {
                         }
                     </div>
                 </Reveal>
-                <Footer year={2020} copyright={"Rohito Tsubakura"}></Footer>
+                <Footer year={2023} copyright={"Rohito Tsubakura"}></Footer>
             </div>
         </>
     );
