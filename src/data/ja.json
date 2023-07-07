@@ -16,10 +16,10 @@
                         "404": "http://rohitotsubakura.netlify.app/404/"
                     },
                     "ogpthumb": {
-                        "top": "https://rohitotsubakura.netlify.app/static/images/imagekeyvisual.png",
-                        "newsList": "https://rohitotsubakura.netlify.app/static/images/image_crop.png",
+                        "top": "https://rohitotsubakura.netlify.app/images/lxi_ogp.png",
+                        "newsList": "https://rohitotsubakura.netlify.app/images/image_crop.png",
                         "newsDetail": "",
-                        "404": "https://rohitotsubakura.netlify.app/static/images/image404.png"
+                        "404": "https://rohitotsubakura.netlify.app/images/image404.png"
                     },
                     "description": {
                         "top": "クリエイターでWebフロントエンド系な白塗り美男子VTuber、ツバクラロヒトの公式サイトです。",
