@@ -90,7 +90,7 @@ const Home: NextPage<HomeProps> = ({news, keyvisual, videos}) => {
                 <Goods />
                 <Terms />
                 <Links />
-                <Footer year={2022} copyright={"Rohito Tsubakura"}></Footer>
+                <Footer year={2023} copyright={"Rohito Tsubakura"}></Footer>
             </div>
         </>
     );

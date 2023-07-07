@@ -71,7 +71,7 @@ const buttonsStyle = css`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-conetnt: center;
+    justify-content: center;
     margin-bottom: ${Size(20)};
     & > * {
         margin-right: ${Size(5)};
@@ -113,7 +113,7 @@ const Custom404: NextPage = () => {
                         </InternalLinkButton>
                     </div>
                 </div>
-                <Footer year={2020} copyright={"Rohito Tsubakura"}></Footer>
+                <Footer year={2023} copyright={"Rohito Tsubakura"}></Footer>
             </div>
         </>
     );
